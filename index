@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dive into dokieli</title>
+        <link rel="stylesheet" href="https://dokie.li/media/css/lncs.css" media="all" title="LNCS" />
+        <link rel="stylesheet alternate" href="https://dokie.li/media/css/acm.css" media="all" title="ACM" />
+        <link rel="stylesheet" href="https://dokie.li/media/css/lr.css" media="all" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" media="all" />
+        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor.css" media="all" />
+        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor-default.css" media="all" />
+        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor-tables.css" media="all" />
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://dokie.li/scripts/RDFaProcessor.min.1.4.0.js"></script>
+        <script src="https://dokie.li/scripts/simplerdf.js"></script>
+        <script src="https://dokie.li/scripts/html.sortable.min.js"></script>
+        <script src="https://dokie.li/scripts/medium-editor.min.js"></script>
+        <script src="https://dokie.li/scripts/medium-editor-tables.min.js"></script>
+        <script src="https://dokie.li/scripts/lr.js"></script>
+    </head>
+
+    <body about="" typeof="schema:CreativeWork sioc:Post prov:Entity" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: http://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# pingback: http://purl.org/net/pingback/">
+        <main>
+            <article about="" typeof="schema:ScholarlyArticle">
+                <h1 property="schema:name">Dive into dokieli</h1>
+
+                <div id="authors">
+                    <dl id="author-name">
+                        <dt>Authors</dt>
+                        <dd id="author-1" rel="bibo:authorList" inlist="" resource="http://csarven.ca/#i"><span about="" rel="schema:contributor schema:creator schema:publisher schema:author"><a about="http://csarven.ca/#i" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://csarven.ca/">Sarven Capadisli</a></span><sup><a about="http://csarven.ca/#i" rel="schema:memberOf" resource="http://dbpedia.org/resource/University_of_Bonn" href="#author-org-1">1</a></sup><sup><a href="#author-email-1">✊</a></sup></dd>
+                        <dd id="author-2" rel="bibo:authorList" inlist="" resource="http://rhiaro.co.uk/about#me"><span about="" rel="schema:contributor"><a about="http://rhiaro.co.uk/about#me" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://rhiaro.co.uk/">Amy Guy</a></span><sup><a about="http://rhiaro.co.uk/about#me" rel="fabouschema:memberOf" resource="http://dbpedia.org/resource/University_of_Edinburgh" href="#author-org-2">2</a></sup><sup><a href="#author-email-2">🐦</a></sup></dd>
+                        <dd id="author-3" rel="bibo:authorList" inlist="" resource="#SörenAuer"><span about="" rel="schema:contributor"><a about="#SörenAuer" typeof="schema:Person" rel="schema:url" property="schema:name" href="http://www.iai.uni-bonn.de/~auer/">Sören Auer</a></span><sup><a about="#SörenAuer" rel="fabouschema:memberOf" resource="http://dbpedia.org/resource/University_of_Bonn" href="#author-org-1">1</a></sup><sup><a href="#author-email-3">⚛</a></sup></dd>
+                    </dl>
+
+                    <ul id="author-org">
+                        <li id="author-org-1"><sup>1</sup><a about="http://dbpedia.org/resource/University_of_Bonn" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://uni-bonn.de/">University of Bonn</a>, Enterprise Information Systems Department, Bonn, Germany</li>
+                        <li id="author-org-2"><sup>2</sup><a about="http://dbpedia.org/resource/University_of_Edinburgh" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.ed.ac.uk/">University of Edinburgh</a>, Centre for Intelligent Systems and their Applications, Edinburgh, UK</li>
+                    </ul>
+
+                    <ul id="author-email">
+                        <li id="author-email-1"><sup>✊</sup><a about="http://csarven.ca/#i" rel="schema:email" href="mailto:info@csarven.ca">info@csarven.ca</a></li>
+                        <li id="author-email-2"><sup>🐦</sup><a about="http://rhiaro.co.uk/about#me" rel="schema:email" href="mailto:amy@rhiaro.co.uk">amy@rhiaro.co.uk</a></li>
+                        <li id="author-email-3"><sup>⚛</sup><a about="#SörenAuer" rel="schema:email" href="mailto:auer@cs.uni-bonn.de">auer@cs.uni-bonn.de</a></li>
+                    </ul>
+                </div>
+
+                <dl id="document-identifier">
+                    <dt>Document ID</dt>
+                    <dd><a href="http://csarven.ca/dive-into-dokieli">http://csarven.ca/dive-into-dokieli</a></dd>
+                </dl>
+
+                <dl id="document-published">
+                    <dt>Published</dt>
+                    <dd><time datetime="2015-12-19T00:00:00Z" property="schema:datePublished" datatype="xsd:dateTime">2015-12-19</time></dd>
+                </dl>
+
+                <dl id="document-modified">
+                    <dt>Modified</dt>
+                    <dd><time datetime="2015-12-19T00:00:00Z" property="schema:dateModified" datatype="xsd:dateTime">2015-12-19</time></dd>
+                </dl>
+
+                <dl id="document-license">
+                    <dt>License</dt>
+                    <dd><a rel="schema:license" href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike 4.0 Unported">CC BY-SA 4.0</a></dd>
+                </dl>
+
+                <dl id="document-in-reply-to">
+                    <dt>In Reply To</dt>
+                    <dd><a rel="sioc:reply_of" href="http://events.linkeddata.org/ldow2016/">LDOW2016 Call for Papers</a></dd>
+                </dl>
+
+                <dl id="document-notifications">
+                    <dt>Interactions</dt>
+                    <dd><a rel="pingback:to" href="http://csarven.ca/dive-into-dokieli/interactions/">http://csarven.ca/dive-into-dokieli/interactions/</a></dd>
+                </dl>
+
+                <div id="content">
+                    <section id="abstract">
+                        <h2>Abstract</h2>
+                        <div property="schema:abstract" datatype="rdf:HTML">
+                            <p>dokieli is a decentralized authoring, annotations and social interaction tool.</p>
+                        </div>
+                    </section>
+
+                    <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
+                        <h2 property="schema:name">Introduction</h2>
+                        <div property="schema:description" resource="#introduction" typeof="deo:Introduction" datatype="rdf:HTML">
+                            <p>dokieli is a decentralized article authoring, annotation, and social pingback tool which works from a Web browser. While it is a general purpose tooling to write articles, it is fully compliant with the Linked Research initiative and principles, and provides features and interactions for scholarly communication. Its architecture is progressively enhanced such that dokieli based articles are accessible anywhere from a Line Mode Browser to Firefox Nightly. Articles and annotations can be curled and dereferenced to get the complete content in HTML and RDF.</p>
+
+                            <p>Where applicable, dokieli can employ participant's e.g., authors, reviewers, commenters, WebID and personal online datastores to store and give different access controls to the information. Similarly, anyone that wants to annotate can store their notes at a Webspace in which they control.</p>
+                        </div>
+                    </section>
+
+                    <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
+                        <h2 property="schema:name">Use Cases</h2>
+                        <div property="schema:description">
+                            <p>Monkey see monkey do</p>
+
+                            <p>XXX: Create SVG per UC</p>
+                            <figure id="figure-use-cases" about="#figure-use-cases" typeof="doco:FigureBox" rel="schema:hasPart">
+                                <img about="#figure-use-cases" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
+
+                                <figcaption about="#figure-label-use-case" typeof="doco:FigureLabel" property="schema:description">Use cases.</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="design-and-architecture" rel="schema:hasPart" resource="#design-and-architecture" inlist="">
+                        <h2 property="schema:name">Design and Architecture</h2>
+                        <div property="schema:description">
+                            <p>There is nothing to install or setup, out of band tooling or account creations for its core functionality. The Web browser is the only requirement. Reasonable? It is entirely progressively enhanced: intended to minimize friction in publishing and consuming. Works on local machine, and is functional from ground up. Additional features can be used with the "pay-as-you-go" design approach e.g., if authors or reviewers have a WebID and a personal storage space, their feedback can be under their full control, meanwhile allowing who it can be visible to or writeable for. If they don't, or the authors don't wish to enable
+                            open dialogue, that's okay too.</p>
+
+                            <p>It works towards a solution e.g., proposed <a href="http://csarven.ca/enabling-accessible-knowledge#acid-test">acid test</a> where authors and Webizens can both publish and consume, and participate in discussions meanwhile having human and machine-friendly information all within their control.</p>
+
+                            <p>dokieli is not perfect, but it is intended to evolve based on our collective experience.</p>
+                        </div>
+                    </section>
+
+                    <section id="features" rel="schema:hasPart" resource="#features" inlist="">
+                        <h2 property="schema:name">Features</h2>
+                        <div property="schema:description">
+                            <p>Here is a paragraph</p>
+
+                            <ul>
+                                <li>In-browser document authoring and formatting, and semantic enrichments</li>
+                                <li>Information is represented and retrieved following the Linked Data design principles</li>
+                                <li>Employs WebID + ACL and personal online datastore where applicable (compliant with <a href="http://www.w3.org/TR/ldp/">Linked Data Platform</a> and <a href="https://github.com/solid/solid-spec">Solid</a> servers)</li>
+                                <li>Using author's information from their online profile</li>
+                                <li>Creation of new documents from any dokieli document (anywhere on the Web given write access)</li>
+                                <li>Annotations and pingbacks (e.g., replies, peer-reviews, liking, resharing). Uses W3C Web Annotation and Social Web data models</li>
+                                <li>Assignment of URI fragments (to whatever is of interest) for other resources to reference</li>
+                                <li>Embedding data blocks (e.g., nanopublications)</li>
+                                <li>Embedding of media objects, tables, and interactions</li>
+                                <li>Automated references and citations</li>
+                                <li>Insertion of table of contents, figures, tables, abbreviations</li>
+                                <li>Drag and drop to reorganize the document's sections and table of contents</li>
+                                <li>In-browser local storage, and document exporting</li>
+                                <li>Document metadata</li>
+                                <li>Views for screen and print (e.g., ACM, LNCS) - yes, you can output to a paper user interface: PDF</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
+                        <h2 about="#interactions" property="schema:name">Interactions</h2>
+                        <div about="#interactions" property="schema:description">
+                            <p>XXX: Restructure so that it covers notifications/pingback, annotations, social-web stuff..</p>
+
+                            <section id="annotations" rel="schema:hasPart" resource="#annotations">
+                                <h3 about="#annotations" property="schema:name">Annotations</h3>
+                                <div about="#annotations" property="schema:description">
+                                    <p>foo bar</p>
+                                </div>
+                            </section>
+
+                            <section id="social-web" rel="schema:hasPart" resource="#social-web">
+                                <h3 about="#social-web" property="schema:name">Social Web</h3>
+                                <div about="#social-web" property="schema:description">
+                                    <p>baz qux</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+
+                    <section id="social-and-technical-impact" rel="schema:hasPart" resource="#social-and-technical-impact" inlist="">
+                        <h2 about="#social-and-technical-impact" property="schema:name">Social and Technical Impact</h2>
+                        <div about="#social-and-technical-impact" property="schema:description">
+                            <p>Social and technical impact</p>
+                        </div>
+                    </section>
+
+                    <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
+                        <h2 about="#conclusions" property="schema:name">Conclusions</h2>
+                        <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
+                            <p>Congrats! You are almost done.</p>
+                        </div>
+                    </section>
+
+                    <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
+                        <h2 about="#acknowledgements" property="schema:name">Acknowledgements</h2>
+                        <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
+                            <p>We would like to thank the academy.</p>
+                        </div>
+                    </section>
+
+                    <section id="references">
+                        <h2>References</h2>
+                        <div>
+                            <ol>
+                                <li id="ref-1">Evolution of the Web, <a rel="schema:citation cito:citesAsRecommendedReading cito:citesAsSourceDocument" href="http://www.w3.org/DesignIssues/Evolution.html">http://www.w3.org/DesignIssues/Evolution.html</a></li>
+                                <li id="ref-2">Principles of Design, <a rel="schema:citation cito:citesAsSourceDocument cito:citesAsRecommendedReading" href="http://www.w3.org/DesignIssues/Principles.html#PLP">http://www.w3.org/DesignIssues/Principles.html#PLP</a></li>
+                                <li id="ref-3">Berners-Lee, T., Mendelsohn, N.: The Rule of Least Power, <a rel="schema:citation cito:citesAsSourceDocument cito:citesAsRecommendedReading" href="http://www.w3.org/2001/tag/doc/leastPower.html">http://www.w3.org/2001/tag/doc/leastPower.html</a></li>
+                                <li id="ref-4"><a rel="schema:citation cito:citesAsRecommendedReading" href="https://github.com/linkeddata/dokieli">https://github.com/linkeddata/dokieli</a></li>
+                            </ol>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+        </main>
+    </body>
+</html>
