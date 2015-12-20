@@ -34,7 +34,7 @@
 
                     <ul id="author-org">
                         <li id="author-org-1"><sup>1</sup><a about="http://dbpedia.org/resource/University_of_Bonn" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://uni-bonn.de/">University of Bonn</a>, Enterprise Information Systems Department, Bonn, Germany</li>
-                        <li id="author-org-2"><sup>2</sup><a about="http://dbpedia.org/resource/University_of_Edinburgh" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.ed.ac.uk/">University of Edinburgh</a>, Centre for Intelligent Systems and their Applications, Edinburgh, UK</li>
+                        <li id="author-org-2"><sup>2</sup><a about="http://dbpedia.org/resource/University_of_Edinburgh" typeof="schema:Organization" property="schema:name" rel="schema:url" href="http://www.ed.ac.uk/">University of Edinburgh</a>, School of Informatics, Edinburgh, UK</li>
                     </ul>
 
                     <ul id="author-email">
