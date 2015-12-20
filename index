@@ -70,8 +70,8 @@
                 </dl>
 
                 <dl id="document-notifications">
-                    <dt>Interactions</dt>
-                    <dd><a rel="as:replies" href="http://csarven.ca/dive-into-dokieli/interactions/">http://csarven.ca/dive-into-dokieli/interactions/</a></dd>
+                    <dt>Notifications Inbox</dt>
+                    <dd><a rel="as:replies" href="http://csarven.ca/dive-into-dokieli/inbox/">http://csarven.ca/dive-into-dokieli/inbox/</a></dd>
                 </dl>
 
                 <div id="content">
@@ -102,8 +102,19 @@
 
                                 <figcaption about="#figure-label-use-case" typeof="doco:FigureLabel" property="schema:description">Use cases.</figcaption>
                             </figure>
+
+                            <p>XXX: Revisit <a href="http://www.w3.org/TR/dpub-annotation-uc/">http://www.w3.org/TR/dpub-annotation-uc/</a> and see what's good for discussion.</p>
                         </div>
                     </section>
+
+
+                    <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
+                        <h2 property="schema:name">Landscape</h2>
+                        <div property="schema:description">
+                            <p>Papers/Articles, CFP, Proceedings, Author profiles, Annotations/Reviews</p>
+                        </div>
+                    </section>
+
 
                     <section id="design-and-architecture" rel="schema:hasPart" resource="#design-and-architecture" inlist="">
                         <h2 property="schema:name">Design and Architecture</h2>
