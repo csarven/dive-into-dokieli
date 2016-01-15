@@ -78,7 +78,7 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>dokieli is a decentralized authoring, annotations and social interaction tool.</p>
+                            <p>In this paper we describe dokieli, a general purpose clientside tool for document authoring, editing and publication. Features are enabled progressively according to the needs and technical resources of the user. The editor is open source, built on web standards and documents are represented as linked data. This allows: decentralised storage and data ownership; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof; fine-grained data embedding through RDFa; rich metadata such as provenance and licensing information; enhancements for academic research papers including embedding of datasets and runnable experiments.</p>
                         </div>
                     </section>
 
@@ -90,89 +90,114 @@
                             <p>Where applicable, dokieli can employ participant's e.g., authors, reviewers, commenters, WebID and personal online datastores to store and give different access controls to the information. Similarly, anyone that wants to annotate can store their notes at a Webspace in which they control.</p>
                         </div>
                     </section>
-
-                    <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
-                        <h2 property="schema:name">Use Cases</h2>
+                    
+                    <section id="landscape" rel="schema:hasPart" resource="#landscape" inlist="">
+                        <h2 property="schema:name">Landscape</h2>
                         <div property="schema:description">
-                            <p>Monkey see monkey do</p>
-
-                            <p>XXX: Create SVG per UC</p>
-                            <figure id="figure-use-cases" about="#figure-use-cases" typeof="doco:FigureBox" rel="schema:hasPart">
-                                <img about="#figure-use-cases" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
-
-                                <figcaption about="#figure-label-use-case" typeof="doco:FigureLabel" property="schema:description">Use cases.</figcaption>
-                            </figure>
-
+                            <p>Related work for document editors; which are webby and where they fall down, to what extent each have social features, to what extent they are linked and searchable.</p>
+                            <li>hypothes.is</li>
+                            <li>http://genius.com/web-annotator</li>
+                        </div>
+                    </section>
+                    
+                    <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
+                        <h2 property="schema:name">Use cases</h2>
+                        <div property="schema:description">
+                            <p>Use cases met (and intended to meet?). Baseline success criteria?</p>
                             <p>XXX: Revisit <a href="http://www.w3.org/TR/dpub-annotation-uc/">http://www.w3.org/TR/dpub-annotation-uc/</a> and see what's good for discussion.</p>
                         </div>
                     </section>
 
-
-                    <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
-                        <h2 property="schema:name">Landscape</h2>
+                    <section id="architecture" rel="schema:hasPart" resource="#architecture" inlist="">
+                        <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
-                            <p>Papers/Articles, CFP, Proceedings, Author profiles, Annotations/Reviews</p>
-                        </div>
-                    </section>
+                            <p>Overview of system and requirements</p>
 
+                            <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
+                                <h3>Modes of operation</h3>
+                                <div property="schema:description">
+                                    <p>Diagrams and progressive layering of features</p>
+                                    <p>XXX: Create SVGs</p>
+                                    <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
+                                        <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
+        
+                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
+                                    </figure>
+                                </div>
+                            </section>
+                            
+                            <section id="building-blocks" rel="schema:hasPart" resource="#building-blocks" inlist="">
+                                <h3>Building blocks</h3>
+                                <div property="schema:description">
+                                    <p>Standards and linked data and stuff. Dependencies (simplerdf, medium editor).</p>
+                                </div>
+                            </section>
+                            
+                            <section id="growth" rel="schema:hasPart" resource="#growth" inlist="">
+                                <h3>Growth</h3>
+                                <div property="schema:description">
+                                    <p>Duplicate and create new docs from any dokieli document.</p>
+                                </div>
+                            </section>
 
-                    <section id="design-and-architecture" rel="schema:hasPart" resource="#design-and-architecture" inlist="">
-                        <h2 property="schema:name">Design and Architecture</h2>
-                        <div property="schema:description">
-                            <p>There is nothing to install or setup, out of band tooling or account creations for its core functionality. The Web browser is the only requirement. Reasonable? It is entirely progressively enhanced: intended to minimize friction in publishing and consuming. Works on local machine, and is functional from ground up. Additional features can be used with the "pay-as-you-go" design approach e.g., if authors or reviewers have a WebID and a personal storage space, their feedback can be under their full control, meanwhile allowing who it can be visible to or writeable for. If they don't, or the authors don't wish to enable
-                            open dialogue, that's okay too.</p>
-
-                            <p>It works towards a solution e.g., proposed <a href="http://csarven.ca/enabling-accessible-knowledge#acid-test">acid test</a> where authors and Webizens can both publish and consume, and participate in discussions meanwhile having human and machine-friendly information all within their control.</p>
-
-                            <p>dokieli is not perfect, but it is intended to evolve based on our collective experience.</p>
                         </div>
                     </section>
 
                     <section id="features" rel="schema:hasPart" resource="#features" inlist="">
                         <h2 property="schema:name">Features</h2>
                         <div property="schema:description">
-                            <p>Here is a paragraph</p>
-
-                            <ul>
-                                <li>In-browser document authoring and formatting, and semantic enrichments</li>
-                                <li>Information is represented and retrieved following the Linked Data design principles</li>
-                                <li>Employs WebID + ACL and personal online datastore where applicable (compliant with <a href="http://www.w3.org/TR/ldp/">Linked Data Platform</a> and <a href="https://github.com/solid/solid-spec">Solid</a> servers)</li>
-                                <li>Using author's information from their online profile</li>
-                                <li>Creation of new documents from any dokieli document (anywhere on the Web given write access)</li>
-                                <li>Annotations and pingbacks (e.g., replies, peer-reviews, liking, resharing). Uses W3C Web Annotation and Social Web data models</li>
-                                <li>Assignment of URI fragments (to whatever is of interest) for other resources to reference</li>
-                                <li>Embedding data blocks (e.g., nanopublications)</li>
-                                <li>Embedding of media objects, tables, and interactions</li>
-                                <li>Automated references and citations</li>
-                                <li>Insertion of table of contents, figures, tables, abbreviations</li>
-                                <li>Drag and drop to reorganize the document's sections and table of contents</li>
-                                <li>In-browser local storage, and document exporting</li>
-                                <li>Document metadata</li>
-                                <li>Views for screen and print (e.g., ACM, LNCS) - yes, you can output to a paper user interface: PDF</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
-                        <h2 about="#interactions" property="schema:name">Interactions</h2>
-                        <div about="#interactions" property="schema:description">
-                            <p>XXX: Restructure so that it covers notifications/pingback, annotations, social-web stuff..</p>
-
-                            <section id="annotations" rel="schema:hasPart" resource="#annotations">
-                                <h3 about="#annotations" property="schema:name">Annotations</h3>
-                                <div about="#annotations" property="schema:description">
-                                    <p>foo bar</p>
+                            <p>Deeper look at certain functionality, including screenshots etc</p>
+                            
+                            <section id="rich-editing" rel="schema:hasPart" resource="#features" inlist="">
+                                <h3>Rich editing</h3>
+                                <div property="schema:description">
                                     <ul>
-                                        <li>hypothes.is</li>
-                                        <li>http://genius.com/web-annotator</li>
+                                        <li>Embedding stats/data</li>
+                                        <li>Embedding runnable code</li>
+                                        <li>Automated references and citations</li>
+                                        <li>Drag and drop to reorganize the document's sections and table of contents</li>
+                                        <li>Views</li>
                                     </ul>
                                 </div>
                             </section>
-
-                            <section id="social-web" rel="schema:hasPart" resource="#social-web">
-                                <h3 about="#social-web" property="schema:name">Social Web</h3>
-                                <div about="#social-web" property="schema:description">
-                                    <p>baz qux</p>
+                            <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
+                                
+                                <h3>Semantics</h3>
+                                <div property="schema:description">
+                                    <li>URI fragments.</li>
+                                    <li>Metadata and rdfa.</li>
+                                    <li>Linking to other docs, in-reply-to etc.</li>
+                                  
+                                </div>
+                              
+                            </section>
+                            <section id="authentication-and-access-control" rel="schema:hasPart" resource="#features" inlist="">
+                              
+                                <h3>Authentication and access control</h3>
+                                <div property="schema:description">
+                                    <ul>
+                                        <li>WebID & ACL.</li>
+                                        <li>Using author's information from their online profile.</li>
+                                    </ul>
+                                </div>
+                              
+                            </section>
+                            <section id="storage" rel="schema:hasPart" resource="#features" inlist="">
+                                <h3>Storage</h3>
+                                <div property="schema:description">
+                                    <ul>
+                                        <li>In-browser local storage, and document exporting</li>
+                                        <li>On dumb hosting, or solid servers</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section id="interactions" rel="schema:hasPart" resource="#features" inlist="">
+                                <h3>Interactions</h3>
+                                <div property="schema:description">
+                                    <ul>
+                                        <li>Annotations, internal and external</li>
+                                        <li>Notifications</li>
+                                    </ul>
                                 </div>
                             </section>
                         </div>
@@ -181,14 +206,17 @@
                     <section id="social-and-technical-impact" rel="schema:hasPart" resource="#social-and-technical-impact" inlist="">
                         <h2 about="#social-and-technical-impact" property="schema:name">Social and Technical Impact</h2>
                         <div about="#social-and-technical-impact" property="schema:description">
-                            <p>Social and technical impact</p>
+                            <p>Normalisation of data ownership by making it as easy as clicking a button. (social)</p>
+                            <p>Linking of articles in big chains of awesome. Discovery of connections. (social & technical)</p>
+                            <p>Availability of social and prosey LD (technical)</p>
                         </div>
                     </section>
 
                     <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
-                        <h2 about="#conclusions" property="schema:name">Conclusions</h2>
+                        <h2 about="#conclusions" property="schema:name">Dive in!</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
-                            <p>Congrats! You are almost done.</p>
+                            <p>Conclusions</p>
+                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://dokie.li/dive-into-dokieli, or create a copy that you can edit yourself.</p>
                         </div>
                     </section>
 
