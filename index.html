@@ -7,10 +7,8 @@
         <link rel="stylesheet" href="https://dokie.li/media/css/acm.css" media="all" title="ACM" />
         <link rel="stylesheet" href="https://dokie.li/media/css/do.css" media="all" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" media="all" />
-        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor.css" media="all" />
-        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor-default.css" media="all" />
-        <link rel="stylesheet" href="https://dokie.li/media/css/medium-editor-tables.css" media="all" />
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link rel="stylesheet" href="https://dokie.li/media/css/editor.css" media="all" />
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://dokie.li/scripts/RDFaProcessor.min.1.4.0.js"></script>
         <script src="https://dokie.li/scripts/simplerdf.js"></script>
         <script src="https://dokie.li/scripts/html.sortable.min.js"></script>
@@ -90,7 +88,7 @@
                             <p>Where applicable, dokieli can employ participant's e.g., authors, reviewers, commenters, WebID and personal online datastores to store and give different access controls to the information. Similarly, anyone that wants to annotate can store their notes at a Webspace in which they control.</p>
                         </div>
                     </section>
-                    
+
                     <section id="landscape" rel="schema:hasPart" resource="#landscape" inlist="">
                         <h2 property="schema:name">Landscape</h2>
                         <div property="schema:description">
@@ -99,7 +97,7 @@
                             <li>http://genius.com/web-annotator</li>
                         </div>
                     </section>
-                    
+
                     <section id="use-cases" rel="schema:hasPart" resource="#use-cases" inlist="">
                         <h2 property="schema:name">Use cases</h2>
                         <div property="schema:description">
@@ -120,26 +118,79 @@
                                     <p>XXX: Create SVGs</p>
                                     <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
                                         <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
-        
+
                                         <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
                                     </figure>
                                 </div>
                             </section>
-                            
+
                             <section id="building-blocks" rel="schema:hasPart" resource="#building-blocks" inlist="">
-                                <h3>Building blocks</h3>
+                                <h3 property="schema:name">Building blocks</h3>
                                 <div property="schema:description">
                                     <p>Standards and linked data and stuff. Dependencies (simplerdf, medium editor).</p>
                                 </div>
                             </section>
-                            
+
                             <section id="growth" rel="schema:hasPart" resource="#growth" inlist="">
-                                <h3>Growth</h3>
+                                <h3 property="schema:name">Growth</h3>
                                 <div property="schema:description">
                                     <p>Duplicate and create new docs from any dokieli document.</p>
                                 </div>
                             </section>
+                        </div>
+                    </section>
 
+                    <section id="problem-space" rel="schema:hasPart" resource="#problem-space" inlist="">
+                        <h2 property="schema:name">Problem Space</h2>
+                        <div property="schema:description" datatype="rdf:HTML">
+                            <p>Prose content... flowable data... interactivity</p>
+                            <p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>
+                        </div>
+                    </section>
+
+                    <section id="requirements" rel="schema:hasPart" resource="#requirements" inlist="">
+                        <h2 property="schema:name">Requirements</h2>
+                        <div property="schema:description" datatype="rdf:HTML">
+                            <ul>
+                                <li>Decentralised data storage, ownership, and control</li>
+                                <li>Progressive enhancement and accessibility</li>
+                                <li>Text-editing and formatting</li>
+                                <li>Semantic text-marking</li>
+                                <li>Annotations</li>
+                                <li>Social notifications</li>
+                                <li>Interactivity</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="data-management-and-information-retrieval" rel="schema:hasPart" resource="#data-management-and-information-retrieval" inlist="">
+                        <h2 property="schema:name">Data Management and Information Retrieval</h2>
+                        <div property="schema:description" datatype="rdf:HTML">
+                            <p></p>
+                        </div>
+                    </section>
+
+                    <section id="html-rdfa" rel="schema:hasPart" resource="#html-rdfa" inlist="">
+                        <h2 property="schema:name">HTML+RDFa</h2>
+                        <div property="schema:description" datatype="rdf:HTML">
+                            <p>The application of the RDF language is the fundamental choice, and it can be notated in different ways. However, an ongoing challenge is to determine and incorporate appropriate RDF serialization(s) for both data publication and consumption. This is particularly important for different contexts given that each RDF serialization has its own strengths and weakness.</p>
+
+<!--                             <p>RDFa is one of the ways to notate the RDF language such that the atomic statements can be declared, discovered and reused on the Web.</p>
+ -->
+                            <p id="why-rdfa"><strong>Why HTML+RDFa</strong>: The granularity in which users can mark and create statements for prose content is suitable in HTML+RDFa because <em>out of the box</em>, 1) HTML provides the core language for WWW to represent text-level semantics, sectioning, grouping and embeddable content, tabular data, as well as forms and interactivity to help publishers and Web application developers, and 2) RDFa compliments it by providing the mechanism to express structured data using terms from multiple independently-developed vocabularies to enhance functionality and interoperability of the data. This particular combination makes it possible to have individual documents to be both human and machine-readable.</p>
+
+                            <p id="rdf-in-html"><strong>RDF in HTML</strong>: While transformations between different RDF notations are trivial, our decision to use RDFa in HTML over alternative approaches; Turtle and JSON-LD, is as follows. RDFa can be purposed towards the human-visible (or accessible) portions of the document, and are typically marked inline and in context of where the ideas occur in the document. It is to treat the information available as first-class data as opposed to metadata (which may be hidden from view). While Turtle and JSON-LD may also be written inline, they tend to act as raw data islands, and are slightly disconnected from the context that is human-readable in an HTML document. Concerning data quality, information marked with RDFa is less likely to rot or go stale because of its visibility (or accessibility) to humans, and due to authoring from their canonical location. It should however be noted that Turtle and JSON-LD can be well-purposed in the case of interactive documents. While our justification is aimed at using RDFa for semantic representations, we focus on a user interface that allows the author to work at the level of the RDF language, as opposed to on the syntax level.</p>
+
+                            <p id="alternative-to-html-rdfa"><strong>Alternative to HTML+RDFa</strong>: It is noteworthy to emphasize on the choice of data representation and its usage, is not done in isolation, and depends on the platforms and its users' needs. In order to contrast HTML+RDFa to the alternatives, we can have a look at one particular option for the purpose of our discussion: RDF Turtle with Markdown to represent the prose content.</p>
+
+                            <p id="turtle-markdown">Turtle can be utilized for RDF graphs to be written in a compact and natural text form. Markdown is a plain text formatting syntax designed so that it can be converted to HTML. Hence, this particular combination is suitable for lightweight data representation that is as well human and machine-friendly. While Markdown can be entered manually or using WYSIWYG editors, it is convenient given simplicity for common conventions and expressibility in articles. Here, Turtle acts as the content container.</p>
+                        </div>
+                    </section>
+
+                    <section id="data-management-retrieval-access-control" rel="schema:hasPart" resource="#data-management-and-information-retrieval" inlist="">
+                        <h2 property="schema:name">Data Management, Retrieval, and Access Control</h2>
+                        <div property="schema:description" datatype="rdf:HTML">
+                            <p>This is basically LDP and core Solid stuff here... Might need to change the heading title.</p>
                         </div>
                     </section>
 
@@ -147,9 +198,9 @@
                         <h2 property="schema:name">Features</h2>
                         <div property="schema:description">
                             <p>Deeper look at certain functionality, including screenshots etc</p>
-                            
+
                             <section id="rich-editing" rel="schema:hasPart" resource="#features" inlist="">
-                                <h3>Rich editing</h3>
+                                <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description">
                                     <ul>
                                         <li>Embedding stats/data</li>
@@ -161,29 +212,27 @@
                                 </div>
                             </section>
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
-                                
+
                                 <h3>Semantics</h3>
                                 <div property="schema:description">
-                                    <li>URI fragments.</li>
-                                    <li>Metadata and rdfa.</li>
-                                    <li>Linking to other docs, in-reply-to etc.</li>
-                                  
+                                    <ul>
+                                        <li>URI fragments.</li>
+                                        <li>Metadata and rdfa.</li>
+                                        <li>Linking to other docs, in-reply-to etc.</li>
+                                    </ul>
                                 </div>
-                              
                             </section>
                             <section id="authentication-and-access-control" rel="schema:hasPart" resource="#features" inlist="">
-                              
-                                <h3>Authentication and access control</h3>
+                                <h3 property="schema:name">Authentication and access control</h3>
                                 <div property="schema:description">
                                     <ul>
-                                        <li>WebID & ACL.</li>
+                                        <li>WebID &amp; ACL.</li>
                                         <li>Using author's information from their online profile.</li>
                                     </ul>
                                 </div>
-                              
                             </section>
-                            <section id="storage" rel="schema:hasPart" resource="#features" inlist="">
-                                <h3>Storage</h3>
+                            <section id="storage" rel="schema:hasPart" resource="#storage" inlist="">
+                                <h3 property="schema:name">Storage</h3>
                                 <div property="schema:description">
                                     <ul>
                                         <li>In-browser local storage, and document exporting</li>
@@ -191,8 +240,8 @@
                                     </ul>
                                 </div>
                             </section>
-                            <section id="interactions" rel="schema:hasPart" resource="#features" inlist="">
-                                <h3>Interactions</h3>
+                            <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
+                                <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description">
                                     <ul>
                                         <li>Annotations, internal and external</li>
@@ -207,7 +256,7 @@
                         <h2 about="#social-and-technical-impact" property="schema:name">Social and Technical Impact</h2>
                         <div about="#social-and-technical-impact" property="schema:description">
                             <p>Normalisation of data ownership by making it as easy as clicking a button. (social)</p>
-                            <p>Linking of articles in big chains of awesome. Discovery of connections. (social & technical)</p>
+                            <p>Linking of articles in big chains of awesome. Discovery of connections. (social &amp; technical)</p>
                             <p>Availability of social and prosey LD (technical)</p>
                         </div>
                     </section>
