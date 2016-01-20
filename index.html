@@ -139,30 +139,45 @@
                     <section id="architecture" rel="schema:hasPart" resource="#architecture" inlist="">
                         <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
-                            <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time of use. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
+                            <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
                             <p>In this section we describe the existing standards and protocols which provide the building blocks for our architecture, and how these pieces fit together to make this approach possible.</p>
 
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3>Modes of operation</h3>
                                 <div property="schema:description">
-                                    <p>Core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate. Figures # to # illustrate these.</p>
+                                    <p>Core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate.</p>
                                     <!---<p>XXX: Create SVGs</p>
                                     <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
                                         <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
 
-                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>-->
-                                    </figure>
-                                    <h4>Publishing</h4>
-                                    <figure><figcaption>Read only (local/dumb server + any browser)</figcaption></figure>
-                                    <figure><figcaption>[Local] edit (local/dumb server + js)</figcaption></figure>
-                                    <figure><figcaption>[Local] live edit (local/dumb server + js + local storage)</figcaption></figure>
-                                    <figure><figcaption>Persistant edit (solid server + js)</figcaption></figure>
-                                    <figure><figcaption>Data (RDF parser)</figcaption></figure>
-                                    
-                                    <h4>Interacting</h4>
-                                    <figure><figcaption>Centralised interactions (solid + js + dumb readers)</figcaption></figure>
-                                    <figure><figcaption>Decentralised interactions (solid + js + inbox + solid readers)</figcaption></figure>
-                                    <figure><figcaption>Decoupled interactions (local/dumb + js + solid + inbox + solid readers)</figcaption></figure>
+                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
+                                    </figure>-->
+                                    <section id="publishing-modes" rel="schema:hasPart" resource="#publishing-modes" inlist="">
+                                        <h4>Publishing</h4>
+                                        <div property="schema:description">
+                                            <p><strong>Read only:</strong> A dokieli instance may be hosted on anything that can serve HTML, including the local filesystem. Content is available without JavaScript and CSS (figure 1).</p>
+                                            <p><strong>Temporary edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and exported to save changes (figure 2).</p>
+                                            <p><strong>Local persistent edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and in-browser storage enabled to persist changes for that session (figure 3).</p>
+                                            <p><strong>Persistent edit:</strong> Hosted on a Solid server, edited through a web browser and changes saved directly to the server (figure 4).</p>
+                                            <p><strong>Data only:</strong> Hosted on anything that can serve HTML, content and metadata can be extracted using an RDFa parser and processed, remixed or re-displayed (figure 5).</p>
+                                            <figure><figcaption>Read only</figcaption></figure>
+                                            <figure><figcaption>Temporary edit</figcaption></figure>
+                                            <figure><figcaption>Local persistent edit</figcaption></figure>
+                                            <figure><figcaption>Persistant edit</figcaption></figure>
+                                            <figure><figcaption>Data only</figcaption></figure>
+                                        </div>
+                                    </section>
+                                    <section id="publishing-modes" rel="schema:hasPart" resource="#publishing-modes" inlist="">
+                                        <h4>Interacting</h4>
+                                        <div property="schema:description">
+                                            <p><strong>Centralised interactions:</strong> Hosted on a Solid server, with a space to store interactions made by third-parties (figure 6).</p>
+                                            <p><strong>Decentralised interactions:</strong> Hosted on a Solid server, with an inbox to receive notifications so third-parties can store their interactions in their own datastore (figure 7).</p>
+                                            <p><strong>Decoupled interactions:</strong> Hosted on anything that can serve HTML, with link to a notifications inbox on a Solid server, and third-parties can store their interactions in their own datastore (figure 8).</p>
+                                            <figure><figcaption>Centralised interactions</figcaption></figure>
+                                            <figure><figcaption>Decentralised interactions</figcaption></figure>
+                                            <figure><figcaption>Decoupled interactions</figcaption></figure>
+                                        </div>
+                                    </section>
                                 </div>
                             </section>
 
