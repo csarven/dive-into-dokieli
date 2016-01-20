@@ -86,15 +86,14 @@
                             <p>dokieli is a decentralized article authoring, annotation, and social pingback tool which works from a Web browser. While it is a general purpose tooling to write articles, it is fully compliant with the Linked Research initiative and principles, and provides features and interactions for scholarly communication. Its architecture is progressively enhanced such that dokieli based articles are accessible anywhere from a Line Mode Browser to Firefox Nightly. Articles and annotations can be curled and dereferenced to get the complete content in HTML and RDF.</p>
 
                             <p>Where applicable, dokieli can employ participant's e.g., authors, reviewers, commenters, WebID and personal online datastores to store and give different access controls to the information. Similarly, anyone that wants to annotate can store their notes at a Webspace in which they control.</p>
-                        </div>
-                    </section>
-
-                    <section id="landscape" rel="schema:hasPart" resource="#landscape" inlist="">
-                        <h2 property="schema:name">Landscape</h2>
-                        <div property="schema:description">
-                            <p>Related work for document editors; which are webby and where they fall down, to what extent each have social features, to what extent they are linked and searchable.</p>
-                            <li>hypothes.is</li>
-                            <li>http://genius.com/web-annotator</li>
+                            
+                              <section id="problem-space" rel="schema:hasPart" resource="#problem-space" inlist="">
+                                  <h3 property="schema:name">Problem Space</h3>
+                                  <div property="schema:description" datatype="rdf:HTML">
+                                      <p>Prose content... flowable data... interactivity</p>
+                                      <p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>
+                                  </div>
+                              </section>
                         </div>
                     </section>
 
@@ -103,13 +102,44 @@
                         <div property="schema:description">
                             <p>Use cases met (and intended to meet?). Baseline success criteria?</p>
                             <p>XXX: Revisit <a href="http://www.w3.org/TR/dpub-annotation-uc/">http://www.w3.org/TR/dpub-annotation-uc/</a> and see what's good for discussion.</p>
+                            
+                            <section id="requirements" rel="schema:hasPart" resource="#requirements" inlist="">
+                                <h3 property="schema:name">Requirements</h3>
+                                <div property="schema:description" datatype="rdf:HTML">
+                                    <p>Requirements as derived from above use cases.</p>
+                                    <ul>
+                                        <li>Decentralised data storage, ownership, and control</li>
+                                        <li>Progressive enhancement and accessibility</li>
+                                        <li>Text-editing and formatting</li>
+                                        <li>Semantic text-marking</li>
+                                        <li>Annotations</li>
+                                        <li>Social notifications</li>
+                                        <li>Interactivity</li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                    
+                    <section id="landscape" rel="schema:hasPart" resource="#landscape" inlist="">
+                        <h2 property="schema:name">Landscape</h2>
+                        <div property="schema:description">
+                            <p>Related work for document editors; which are webby and where they fall down, to what extent each have social features, to what extent they are linked and searchable.</p>
+                            <p>How well they meet the use cases/requirements above?</p>
+                            <li>Gdocs</li>
+                            <li>medium</li>
+                            <li>latex guis?</li>
+                            <li>generic wysiwyg</li>
+                            <li>browser readers</li>
+                            <li>hypothes.is</li>
+                            <li>http://genius.com/web-annotator</li>
                         </div>
                     </section>
 
                     <section id="architecture" rel="schema:hasPart" resource="#architecture" inlist="">
                         <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
-                            <p>Overview of system and requirements</p>
+                            <p>Overview of system</p>
 
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3>Modes of operation</h3>
@@ -123,50 +153,34 @@
                                     </figure>
                                 </div>
                             </section>
-
-                            <section id="building-blocks" rel="schema:hasPart" resource="#building-blocks" inlist="">
-                                <h3 property="schema:name">Building blocks</h3>
+                            
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Standards</h3>
                                 <div property="schema:description">
-                                    <p>Standards and linked data and stuff. Dependencies (simplerdf, medium editor).</p>
+                                    <p>The various standards (complete or in-progress) used</p>
+                                </div>
+                            </section>
+
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Data formats</h3>
+                                <div property="schema:description">
+                                    <p>HTML+RDFa justification here</p>
+                                </div>
+                            </section>
+                            
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Personal data stores</h3>
+                                <div property="schema:description">
+                                    <p>Stuff about data ownership and decoupling data from application</p>
                                 </div>
                             </section>
 
                             <section id="growth" rel="schema:hasPart" resource="#growth" inlist="">
-                                <h3 property="schema:name">Growth</h3>
+                                <h3 property="schema:name">Growth/self-replication</h3>
                                 <div property="schema:description">
                                     <p>Duplicate and create new docs from any dokieli document.</p>
                                 </div>
                             </section>
-                        </div>
-                    </section>
-
-                    <section id="problem-space" rel="schema:hasPart" resource="#problem-space" inlist="">
-                        <h2 property="schema:name">Problem Space</h2>
-                        <div property="schema:description" datatype="rdf:HTML">
-                            <p>Prose content... flowable data... interactivity</p>
-                            <p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>
-                        </div>
-                    </section>
-
-                    <section id="requirements" rel="schema:hasPart" resource="#requirements" inlist="">
-                        <h2 property="schema:name">Requirements</h2>
-                        <div property="schema:description" datatype="rdf:HTML">
-                            <ul>
-                                <li>Decentralised data storage, ownership, and control</li>
-                                <li>Progressive enhancement and accessibility</li>
-                                <li>Text-editing and formatting</li>
-                                <li>Semantic text-marking</li>
-                                <li>Annotations</li>
-                                <li>Social notifications</li>
-                                <li>Interactivity</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section id="data-management-and-information-retrieval" rel="schema:hasPart" resource="#data-management-and-information-retrieval" inlist="">
-                        <h2 property="schema:name">Data Management and Information Retrieval</h2>
-                        <div property="schema:description" datatype="rdf:HTML">
-                            <p></p>
                         </div>
                     </section>
 
@@ -187,15 +201,8 @@
                         </div>
                     </section>
 
-                    <section id="data-management-retrieval-access-control" rel="schema:hasPart" resource="#data-management-and-information-retrieval" inlist="">
-                        <h2 property="schema:name">Data Management, Retrieval, and Access Control</h2>
-                        <div property="schema:description" datatype="rdf:HTML">
-                            <p>This is basically LDP and core Solid stuff here... Might need to change the heading title.</p>
-                        </div>
-                    </section>
-
                     <section id="features" rel="schema:hasPart" resource="#features" inlist="">
-                        <h2 property="schema:name">Features</h2>
+                        <h2 property="schema:name">Implementation / Features</h2>
                         <div property="schema:description">
                             <p>Deeper look at certain functionality, including screenshots etc</p>
 
