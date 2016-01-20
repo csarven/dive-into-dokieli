@@ -76,7 +76,7 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this paper we describe dokieli, a general purpose clientside tool for document authoring, editing and publication. Features are enabled progressively according to the needs and technical resources of the user. The editor is open source, built on web standards and documents are represented as linked data. This allows: decentralised storage and data ownership; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof; fine-grained data embedding through RDFa; rich metadata such as provenance and licensing information; enhancements for academic research papers including embedding of datasets and runnable experiments.</p>
+                            <p>In this article we describe dokieli, a general purpose clientside tool for document authoring, editing and publication. Features are enabled progressively according to the needs and technical resources of the user. The editor is open source, built on web standards and documents are represented as linked data. This allows: decentralised storage and data ownership; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof; fine-grained data embedding through RDFa; rich metadata such as provenance and licensing information; enhancements for academic research papers including embedding of datasets and runnable experiments.</p>
                         </div>
                     </section>
 
@@ -139,18 +139,30 @@
                     <section id="architecture" rel="schema:hasPart" resource="#architecture" inlist="">
                         <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
-                            <p>Overview of system</p>
+                            <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time of use. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
+                            <p>In this section we describe the existing standards and protocols which provide the building blocks for our architecture, and how these pieces fit together to make this approach possible.</p>
 
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3>Modes of operation</h3>
                                 <div property="schema:description">
-                                    <p>Diagrams and progressive layering of features</p>
-                                    <p>XXX: Create SVGs</p>
+                                    <p>Core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate. Figures # to # illustrate these.</p>
+                                    <!---<p>XXX: Create SVGs</p>
                                     <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
                                         <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
 
-                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
+                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>-->
                                     </figure>
+                                    <h4>Publishing</h4>
+                                    <figure><figcaption>Read only (local/dumb server + any browser)</figcaption></figure>
+                                    <figure><figcaption>[Local] edit (local/dumb server + js)</figcaption></figure>
+                                    <figure><figcaption>[Local] live edit (local/dumb server + js + local storage)</figcaption></figure>
+                                    <figure><figcaption>Persistant edit (solid server + js)</figcaption></figure>
+                                    <figure><figcaption>Data (RDF parser)</figcaption></figure>
+                                    
+                                    <h4>Interacting</h4>
+                                    <figure><figcaption>Centralised interactions (solid + js + dumb readers)</figcaption></figure>
+                                    <figure><figcaption>Decentralised interactions (solid + js + inbox + solid readers)</figcaption></figure>
+                                    <figure><figcaption>Decoupled interactions (local/dumb + js + solid + inbox + solid readers)</figcaption></figure>
                                 </div>
                             </section>
                             
