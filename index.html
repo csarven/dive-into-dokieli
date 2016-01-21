@@ -120,13 +120,15 @@
                         <div property="schema:description">
                             <p>Related work for document editors; which are webby and where they fall down, to what extent each have social features, to what extent they are linked and searchable.</p>
                             <p>How well they meet the use cases/requirements above?</p>
-                            <li>Gdocs</li>
-                            <li>medium</li>
-                            <li>latex guis?</li>
-                            <li>generic wysiwyg</li>
-                            <li>browser readers</li>
-                            <li>hypothes.is</li>
-                            <li>http://genius.com/web-annotator</li>
+                            <ul>
+                                <li>Gdocs</li>
+                                <li>medium</li>
+                                <li>latex guis?</li>
+                                <li>generic wysiwyg</li>
+                                <li>browser readers</li>
+                                <li>hypothes.is</li>
+                                <li>http://genius.com/web-annotator</li>
+                            </ul>
                         </div>
                     </section>
 
@@ -134,44 +136,44 @@
                         <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
                             <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
+
                             <p>In this section we describe the existing standards and protocols which provide the building blocks for our architecture, and how these pieces fit together to make this approach possible.</p>
 
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                            <section id="data-format" rel="schema:hasPart" resource="#" inlist="">
                                 <h3 property="schema:name">Data format</h3>
                                 <div property="schema:description">
                                     <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
                                     <p>Stuff to do with #uris for linking here?</p>
                                 </div>
                             </section>
-                            
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+
+                            <section id="data-representation" rel="schema:hasPart" resource="#" inlist="">
                                 <h3 property="schema:name">Data representation</h3>
                                 <div property="schema:description">
                                     <p>Vocabs/schemas stuff</p>
                                     <p>AS2, annotations, schema.org, solid/ldp, option for whatever vocab</p>
                                 </div>
                             </section>
-                            
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+
+                            <section id="distribution" rel="schema:hasPart" resource="#" inlist="">
                                 <h3 property="schema:name">Distribution</h3>
                                 <div property="schema:description">
-        
                                     <p>dokieli application logic, written in JavaScript, is distributed along with every document, ensuring all documents can be edited and interacted with. We consider this a <em>default</em> view of a document, rather than the <em>required</em> one however, as the data can still be extracted and used in other contexts by other RDF-aware applications.</p>
-        
+
                                     <p>The progressive nature of dokieli documents is fault-tolerant. If the application scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
-                                    
-                                    <p>dokieli is self-replicating, in that the reader of a dokieli document can spawn an instance&mdash;either a copy or a brand new empty document&mdash;into their own storage space at the click of a button. There is no installation or setup process required to begin publishing.</p>
+
+                                    <p>dokieli is self-replicating, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to begin publishing.</p>
                                 </div>
                             </section>
 
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                            <section id="data-storage" rel="schema:hasPart" resource="#" inlist="">
                                 <h3 property="schema:name">Data storage</h3>
                                 <div property="schema:description">
                                     <p>The owner of a dokieli document has full control and a great deal of flexibility over where to store their article. There are no centralised silos or gatekeepers. However, the capabilities of the system in which a document is stored has an effect on the features which are enabled. At the simplest level, documents can be served from the local filesystem for individual use. To publish documents more widely, they can be hosted on an ordinary Web server, and disseminated with a URL.</p>
                                     <p>dokieli also implements <em>Solid</em>, a set of protocols and conventions for </p>
                                 </div>
                             </section>
-                            
+
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3>Modes of operation</h3>
                                 <div property="schema:description">
