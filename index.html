@@ -76,7 +76,7 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this article we describe dokieli, a general purpose clientside tool for document authoring, editing and publication. Features are enabled progressively according to the needs and technical resources of the user. The editor is open source, built on web standards and documents are represented as linked data. This allows: decentralised storage and data ownership; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof; fine-grained data embedding through RDFa; rich metadata such as provenance and licensing information; enhancements for academic research papers including embedding of datasets and runnable experiments.</p>
+                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: dokieli. dokieli is a general purpose clientside application for document authoring, editing and publication. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open web standards and documents are represented as linked data, allowing: decentralised storage and data ownership; fine-grained semantic structure through RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at https://dokie.li/dive-into-dokieli.</p>
                         </div>
                     </section>
 
@@ -145,7 +145,7 @@
                             <section id="" rel="schema:hasPart" resource="#" inlist="">
                                 <h3 property="schema:name">Data format</h3>
                                 <div property="schema:description">
-                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the prosaic content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
+                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
                                     <p>Stuff to do with #uris for linking here?</p>
                                 </div>
                             </section>
