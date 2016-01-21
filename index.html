@@ -142,6 +142,39 @@
                             <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
                             <p>In this section we describe the existing standards and protocols which provide the building blocks for our architecture, and how these pieces fit together to make this approach possible.</p>
 
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Data format</h3>
+                                <div property="schema:description">
+                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the prosaic content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
+                                </div>
+                            </section>
+                            
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Data representation</h3>
+                                <div property="schema:description">
+                                    <p>Vocabs/schemas stuff</p>
+                                </div>
+                            </section>
+                            
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Distribution</h3>
+                                <div property="schema:description">
+        
+                                    <p>dokieli application logic is distributed along with every document, ensuring all documents can be edited and interacted with. We consider this a <em>default</em> view of a document, rather than the <em>required</em> one however, as the data can still be extracted and used in other contexts by other RDF-aware applications.</p>
+        
+                                    <p>The progressive nature of dokieli documents is fault-tolerant. If the appilcation scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
+                                    
+                                    <p>Replication: Duplicate and create new docs from any dokieli document.</p>
+                                </div>
+                            </section>
+
+                            <section id="" rel="schema:hasPart" resource="#" inlist="">
+                                <h3 property="schema:name">Data storage</h3>
+                                <div property="schema:description">
+                                    <p>Stuff about data ownership and decoupling data from application. Soliiiiid.</p>
+                                </div>
+                            </section>
+                            
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3>Modes of operation</h3>
                                 <div property="schema:description">
@@ -178,46 +211,6 @@
                                             <figure><figcaption>Decoupled interactions</figcaption></figure>
                                         </div>
                                     </section>
-                                </div>
-                            </section>
-
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
-                                <h3 property="schema:name">Data format</h3>
-                                <div property="schema:description">
-                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the prosaic content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
-                                </div>
-                            </section>
-                            
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
-                                <h3 property="schema:name">Data representation</h3>
-                                <div property="schema:description">
-                                    <p>Vocabs/schemas stuff</p>
-                                </div>
-                            </section>
-                            
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
-                                <h3 property="schema:name">Data retrieval</h3>
-                                <div property="schema:description">
-        
-                                    <p>dokieli HTML documents are stored with references to media stylesheets, and scripts. This is a design choice which is intended to provide a <em>default</em> view and interaction for the article. The defaults are the typical experience when consuming applications do not override with their own or user's preferences, meanwhile being possible to override the defaults based on client's capabilities or preferences.</p>
-        
-                                    <p>For instance, <cite>Line Mode Browser</cite>s were designed to ensure compatibility with computer terminals have only displayed text. Similarly, some Web browsers have a built-in <em>reader mode</em> feature that strips away presentations and behaviours which are accompanied with the document, and changes the page's text size, contrast and layout for better readability. There are also third-party add-ons which act in a similar manner. As for the structured prose content, it remains possible to transform the RDF triple statements in RDFa into other RDF serializations.</p>
-        
-                                    <p>dokieli takes on a fault-tolerant design approach, i.e., if the scripts or stylseheets are no longer available, the content is still accessible. This allows continuous operation, possibly at a reduced level, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core functionality and content without external dependencies.</p>
-                                </div>
-                            </section>
-
-                            <section id="" rel="schema:hasPart" resource="#" inlist="">
-                                <h3 property="schema:name">Data storage</h3>
-                                <div property="schema:description">
-                                    <p>Stuff about data ownership and decoupling data from application</p>
-                                </div>
-                            </section>
-
-                            <section id="growth" rel="schema:hasPart" resource="#growth" inlist="">
-                                <h3 property="schema:name">Growth/self-replication</h3>
-                                <div property="schema:description">
-                                    <p>Duplicate and create new docs from any dokieli document.</p>
                                 </div>
                             </section>
                         </div>
