@@ -76,15 +76,15 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose clientside application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open web standards and documents are represented as linked data, allowing: decentralised storage and data ownership; fine-grained semantic structure through RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>https://dokie.li/dive-into-dokieli</code>.</p>
+                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and documents are represented as Linked Data, allowing: decentralised storage and data ownership; fine-grained semantic structure through RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>https://dokie.li/dive-into-dokieli</code>.</p>
                         </div>
                     </section>
 
                     <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
                         <h2 property="schema:name">Introduction</h2>
                         <div property="schema:description" resource="#introduction" typeof="deo:Introduction" datatype="rdf:HTML">
-                            <p>We have combined commonplace online publishing practices with contemporary cutting-edge Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> linked data applications. We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa allows accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data.</p>
-                            <p>We explore the feasability of this architecture through an implementation, which serves as the focus of this article. dokieli is a clientside application for authoring, publishing and interaction with documents. We discuss the use cases we are addressing, existing standards and tools on which we have built, as well as specific implementation details of dokieli. Implementation is ongoing, and we conclude with lessons learnt so far and a discussion of the problems which remain to be solved.</p>
+                            <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa allows accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data.</p>
+                            <p>We explore the feasability of this architecture through an implementation, which serves as the focus of this article. dokieli is a client-side application for authoring, publishing and interaction with documents. We discuss the use cases we are addressing, existing standards and tools on which we have built, as well as specific implementation details of dokieli. Implementation is ongoing, and we conclude with lessons learnt so far and a discussion of the problems which remain to be solved.</p>
 
                         </div>
                     </section>
@@ -135,23 +135,31 @@
                     <section id="architecture" rel="schema:hasPart" resource="#architecture" inlist="">
                         <h2 property="schema:name">Architecture</h2>
                         <div property="schema:description">
-                            <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time. The most minimal tooling required to read content produced with dokieli is a commandline client or text-only browser, and to write content is a text editor. Given a modern web browser, linked data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
+                            <p>Articles are written to share knowledge. The architecture we have chosen enables this knowledge to be as widely accessible as possible; the capabilities of dokieli are designed such that they are enabled progressively and individually, according to the user's needs and technical resources at the time. The most minimal tooling required to read content produced with dokieli is a command-line interface or Line Mode Browser, and to write content is a text editor. Given a modern Web browser, Linked Data tooling, or an LDP-compatible server, documents and data can be consumed, created, connected and manipulated in more powerful and visually appealing ways.</p>
 
                             <p>In this section we describe the existing standards and protocols which provide the building blocks for our architecture, and how these pieces fit together to make this approach possible.</p>
 
-                            <section id="data-format" rel="schema:hasPart" resource="#" inlist="">
+                            <section id="data-format" rel="schema:hasPart" resource="#data-format" inlist="">
                                 <h3 property="schema:name">Data format</h3>
                                 <div property="schema:description">
-                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD must be embedded into HTML as data islands, causing unnecessary separation, and potential duplication and desynchronisation of data.</p>
+                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD may be embedded into HTML as raw data islands, though this causes unnecessary separation, and potential duplication and desynchronisation of data.</p>
+
                                     <p>Stuff to do with #uris for linking here?</p>
                                 </div>
                             </section>
 
-                            <section id="data-representation" rel="schema:hasPart" resource="#" inlist="">
-                                <h3 property="schema:name">Data representation</h3>
+                            <section id="vocabularies" rel="schema:hasPart" resource="#vocabularies" inlist="">
+                                <h3 property="schema:name">Vocabularies</h3>
                                 <div property="schema:description">
-                                    <p>Vocabs/schemas stuff</p>
-                                    <p>AS2, annotations, schema.org, solid/ldp, option for whatever vocab</p>
+                                    <p>The content of the idea dictates the vocabularies, hence, dokieli permits intermixing of vocabulary use to fit the content.</p>
+
+                                    <ul>
+                                        <li>General-purpose: <a href="http://schema.org/">schema.org</a></li>
+                                        <li>HTTP and CRUD operations: <a href="http://www.w3.org/ns/ldp">LDP</a> and <a href="https://github.com/solid/vocab">Solid</a></li>
+                                        <li>Annotations: <a href="http://www.w3.org/ns/oa">Web Annotations</a></li>
+                                        <li>Social notifications: <a href="http://www.w3.org/ns/activitystreams">ActivityStreams</a></li>
+                                        <li>Publishing: <a href="http://purl.org/spar">SPAR Ontologies</a></li>
+                                    </ul>
                                 </div>
                             </section>
 
