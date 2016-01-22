@@ -233,7 +233,7 @@
 
                                 <h3>Semantics and linking</h3>
                                 <div property="schema:description">
-                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. Figure # shows the dokieli user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection.</p>
+                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection.</p>
                                     <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of JSON-LD or Turtle (figure #).</p>
                                     <p>Figure # shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
                                     <figure><figcaption>RDFA embedding screenshot</figcaption></figure>
@@ -246,12 +246,13 @@
                             <section id="rich-editing" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description">
-                                    <ul>
-                                        <li>Embedding runnable code</li>
-                                        <li>Automated references and citations</li>
-                                        <li>Drag and drop to reorganize the document's sections and table of contents</li>
-                                        <li>Views</li>
-                                    </ul>
+                                    <p>The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (figure #). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
+                                    <p><mark>Something about embedding runnable code / experiments?</mark></p>
+                                    <p>Tables of contents and figures are automatically calculated from the document contents and displayed as in figure #. The user can also drag and drop here to conveniently re-order sections of the document.</p>
+                                    <p>dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one.</p>
+                                    <figure><figcaption>screenshot of edit menu</figcaption></figure>
+                                    <figure><figcaption>screenshot of toc</figcaption></figure>
+                                    <figure><figcaption>screenshot of views</figcaption></figure>
                                 </div>
                             </section>
                             
