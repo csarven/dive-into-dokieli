@@ -198,7 +198,7 @@
                                         <div property="schema:description">
                                             <p><strong>Read only:</strong> A dokieli instance may be hosted on anything that can serve HTML, including the local filesystem. Content is available without JavaScript and CSS (figure 1).</p>
                                             <p><strong>Temporary edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and exported to save changes (figure 2).</p>
-                                            <p><strong>Local persistent edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. Content may be edited through an in-browser JavaScript editor and in-browser storage enabled to persist changes for that session (figure 3).</p>
+                                            <p><strong>Local persistent edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. Content may be edited through an in-browser JavaScript editor and in-browser Web Storage enabled to persist changes for a longer period (figure 3).</p>
                                             <p><strong>Persistent edit:</strong> Hosted on a Solid server, edited through a web browser, with changes saved directly to the server (figure 4).</p>
                                             <p><strong>Data only:</strong> Hosted on anything that can serve HTML, content and metadata can be extracted using an RDFa parser and processed, remixed or re-displayed (figure 5).</p>
                                             <figure><figcaption>Read only</figcaption></figure>
@@ -233,7 +233,7 @@
 
                                 <h3>Semantics and linking</h3>
                                 <div property="schema:description">
-                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection.</p>
+                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection. <mark>Write what happens by default when inputs here are left blank.</mark></p>
                                     <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of JSON-LD or Turtle (figure #).</p>
                                     <p>Figure # shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
                                     <figure><figcaption>RDFA embedding screenshot</figcaption></figure>
@@ -259,21 +259,17 @@
                             <section id="storage" rel="schema:hasPart" resource="#storage" inlist="">
                                 <h3 property="schema:name">Storage</h3>
                                 <div property="schema:description">
-                                    <ul>
-                                        <li>In-browser local storage, and document exporting</li>
-                                        <li>On dumb hosting, or solid servers</li>
-                                    </ul>
+                                    <p>A document stored locally or on an ordinary Web server can be edited in a Web browser, and then exported (fig. # %) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+                                    <p></p>
                                 </div>
                             </section>
                             
                             <section id="authentication-and-access-control" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Authentication and access control</h3>
                                 <div property="schema:description">
-                                    <ul>
-                                        <li>WebID &amp; ACL.</li>
-                                        <li>Using author's information from their online profile.</li>
-                                    </ul>
-                                </div>
+                                    <p>People can identify themselves to a dokieli document through <a href="">WebID-TLS</a>. Users with a browser certificate installed and a matching FOAF profile containing the certificate public key are authenticated against their own Solid server if found, with a fallback to a known Solid authentication endpoint. This allows the dokieli instance to write to any Solid-compliant dataspace which the user authorised to write to, including that of a collaborator who has granted them access, or any publicly writeable space. This is how users can, for example, save changes to a document, or store interactions such as comments.</p>
+                                    <p>dokieli also displays an authenticated user's name and display picture if available in their profile. In future, we plan to take into account any preferences in a user's profile, as well as other documents they have previousy published, to enhance and personalise the UI.</p>
+                                    </div>
                             </section>
                             
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
@@ -285,6 +281,7 @@
                                     </ul>
                                 </div>
                             </section>
+                            <figure><figcaption>annotated screenshot of the Do menu</figcaption></figure>
                         </div>
                         <dl id="ref-gh"><dt>gh</dt> <dd>https://github.com/linkeddata/dokieli</dd></dl>
                     </section>
@@ -307,7 +304,7 @@
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
-                                    <p>There remains lots of work to be done... list some things here... and list some things we're not sure how to solve yet eg. templating perhaps?</p>
+                                    <p>There remains lots of work to be done... list some things here... and list some things we're not sure how to solve yet eg. templating perhaps? Improving RDFa UI. Access control (eg. 'invite to collaborate') through the dokieli UI.</p>
                                 </div>
                             </section>
                         </div>
