@@ -233,13 +233,13 @@
 
                                 <h3>Semantics and linking</h3>
                                 <div property="schema:description">
-                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources.</p>
-                                    <ul>
-                                        <li>URI fragments.</li>
-                                        <li>Metadata and rdfa.</li>
-                                        <li>Embedding data</li>
-                                        <li>Linking to other docs, in-reply-to etc.</li>
-                                    </ul>
+                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. Figure # shows the dokieli user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection.</p>
+                                    <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of JSON-LD or Turtle (figure #).</p>
+                                    <p>Figure # shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
+                                    <figure><figcaption>RDFA embedding screenshot</figcaption></figure>
+                                    <figure><figcaption>data island embedding screenshot</figcaption></figure>
+                                    <figure><figcaption>data visualisation</figcaption></figure>
+                                    <p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>
                                 </div>
                             </section>
                             
