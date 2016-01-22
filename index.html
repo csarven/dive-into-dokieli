@@ -163,18 +163,18 @@
                                 </div>
                             </section>
 
-                            <section id="distribution" rel="schema:hasPart" resource="#" inlist="">
+                            <section id="distribution" rel="schema:hasPart" resource="#distribution" inlist="">
                                 <h3 property="schema:name">Distribution</h3>
                                 <div property="schema:description">
                                     <p>dokieli application logic, written in JavaScript, is distributed along with every document, ensuring all documents can be edited and interacted with. We consider this a <em>default</em> view of a document, rather than the <em>required</em> one however, as the data can still be extracted and used in other contexts by other RDF-aware applications.</p>
 
                                     <p>The progressive nature of dokieli documents is fault-tolerant. If the application scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
 
-                                    <p>dokieli is self-replicating, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to begin publishing.</p>
+                                    <p>dokieli is self-replicating, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to publish content.</p>
                                 </div>
                             </section>
 
-                            <section id="data-storage" rel="schema:hasPart" resource="#" inlist="">
+                            <section id="data-storage" rel="schema:hasPart" resource="#data-storage" inlist="">
                                 <h3 property="schema:name">Data storage</h3>
                                 <div property="schema:description">
                                     <p>The owner of a dokieli document has full control and a great deal of flexibility over where to store their article. There are no centralised silos or gatekeepers. However, the capabilities of the system in which a document is stored has an effect on the features which are enabled. At the simplest level, documents can be served from the local filesystem for individual use. To publish documents more widely, they can be hosted on an ordinary Web server, and disseminated with a URL.</p>
@@ -184,7 +184,7 @@
                             </section>
 
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
-                                <h3>Modes of operation</h3>
+                                <h3 property="schema:name">Modes of operation</h3>
                                 <div property="schema:description">
                                     <p>The core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate.</p>
                                     <!---<p>XXX: Create SVGs</p>
@@ -193,8 +193,8 @@
 
                                         <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
                                     </figure>-->
-                                    <section id="publishing-modes" rel="schema:hasPart" resource="#publishing-modes" inlist="">
-                                        <h4>Publishing</h4>
+                                    <section id="publishing" rel="schema:hasPart" resource="#publishing" inlist="">
+                                        <h4 property="schema:name">Publishing</h4>
                                         <div property="schema:description">
                                             <p><strong>Read only:</strong> A dokieli instance may be hosted on anything that can serve HTML, including the local filesystem. Content is available without JavaScript and CSS (figure 1).</p>
                                             <p><strong>Temporary edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and exported to save changes (figure 2).</p>
@@ -204,12 +204,12 @@
                                             <figure><figcaption>Read only</figcaption></figure>
                                             <figure><figcaption>Temporary edit</figcaption></figure>
                                             <figure><figcaption>Local persistent edit</figcaption></figure>
-                                            <figure><figcaption>Persistant edit</figcaption></figure>
+                                            <figure><figcaption>Persistent edit</figcaption></figure>
                                             <figure><figcaption>Data only</figcaption></figure>
                                         </div>
                                     </section>
-                                    <section id="publishing-modes" rel="schema:hasPart" resource="#publishing-modes" inlist="">
-                                        <h4>Interacting</h4>
+                                    <section id="interacting" rel="schema:hasPart" resource="#interacting" inlist="">
+                                        <h4 property="schema:name">Interacting</h4>
                                         <div property="schema:description">
                                             <p><strong>Centralised interactions:</strong> A dokieli instance is hosted on a Solid server, with a space to store interactions (such as replies, annotations, likes) made by third-parties through the in-browser JavaScript editor (figure 6).</p>
                                             <p><strong>Decentralised interactions:</strong> Hosted on a Solid server, with an inbox to receive notifications so third-parties can store their interactions in their own datastore (figure 7).</p>
