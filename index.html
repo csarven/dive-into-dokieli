@@ -142,8 +142,14 @@
                             <section id="data-format" rel="schema:hasPart" resource="#data-format" inlist="">
                                 <h3 property="schema:name">Data format</h3>
                                 <div property="schema:description">
-                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD may be embedded into HTML as raw data islands, though this causes unnecessary separation, and potential duplication and desynchronisation of data.</p>
+                                    <p>The native serialisation for dokieli documents is HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD may be embedded into HTML as raw data islands, though this causes unnecessary separation, and potential duplication and desynchronisation of data.</p>
 
+                                </div>
+                            </section>
+
+                            <section id="identifiers" rel="schema:hasPart" resource="#identifiers" inlist="">
+                                <h3 property="schema:name">Identifiers</h3>
+                                <div property="schema:description">
                                     <p>Stuff to do with #uris for linking here?</p>
                                 </div>
                             </section>
@@ -228,7 +234,7 @@
                         <h2 property="schema:name">Implementation</h2>
                         <div property="schema:description">
                             <p>Our implementation is open source<sup><a href="#ref-gh">gh</a></sup> and available to try at <code>https://dokie.li</code>. In this section we describe specific features which meet the uses cases outlined previously.</p>
-                            
+
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
 
                                 <h3>Semantics and linking</h3>
@@ -242,7 +248,7 @@
                                     <p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>
                                 </div>
                             </section>
-                            
+
                             <section id="rich-editing" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description">
@@ -255,7 +261,7 @@
                                     <figure><figcaption>screenshot of views</figcaption></figure>
                                 </div>
                             </section>
-                            
+
                             <section id="authentication-and-access-control" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Authentication and access control</h3>
                                 <div property="schema:description">
@@ -263,16 +269,21 @@
                                     <p>dokieli also displays an authenticated user's name and display picture if available in their profile. In future, we plan to take into account any preferences in a user's profile, as well as other documents they have previousy published, to enhance and personalise the UI.</p>
                                     </div>
                             </section>
-                            
+
                             <section id="storage" rel="schema:hasPart" resource="#storage" inlist="">
                                 <h3 property="schema:name">Storage</h3>
                                 <div property="schema:description">
-                                    <p>A document stored locally or on an ordinary Web server can be edited in a Web browser, and then exported (fig. # %) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+                                    <p>Articles may be stored on user's local filesystem or hosted from ordinary Web servers which can serve static HTML files e.g., university user pages, code repositories, personal or company webspace, or any file hosting.</p>
+
+                                    <p>dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+
+                                    <p>Articles can be edited in a Web browser, and then exported (fig. # %) to save changes.</p>
+
                                     <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (fig # % save button). The <em>new</em> (fig # %) and <em>save as</em> (fig # %) buttons prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and they point to a personal datastore in their profile, dokieli presents a file browser, through which the user can click to choose where to save (figure #). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable.</p>
                                     <figure><figcaption>file browser woo</figcaption></figure>
                                 </div>
                             </section>
-                            
+
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
                                 <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description">
@@ -301,7 +312,7 @@
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
                             <p>Conclusions</p>
                             <p>Try dokieli yourself right now! Leave a comment on this paper at https://dokie.li/dive-into-dokieli, or create a copy that you can edit yourself.</p>
-                            
+
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
