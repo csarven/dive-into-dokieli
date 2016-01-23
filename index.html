@@ -84,9 +84,9 @@
                     <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
                         <h2 property="schema:name">Introduction</h2>
                         <div property="schema:description" resource="#introduction" typeof="deo:Introduction" datatype="rdf:HTML">
-                            <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa allows accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data.</p>
-                            <p>We explore the feasability of this architecture through an implementation, which serves as the focus of this article. dokieli is a client-side application for authoring, publishing and interaction with documents. We discuss the use cases we are addressing, existing standards and tools on which we have built, as well as specific implementation details of dokieli. Implementation is ongoing, and we conclude with lessons learnt so far and a discussion of the problems which remain to be solved.</p>
+                            <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa fosters accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data.</p>
 
+                            <p>We explore the feasibility of this architecture through an implementation, which serves as the focus of this article. dokieli is a client-side application for authoring, publishing and interaction with documents. We discuss the use cases we are addressing, existing standards and tools on which we have built, as well as specific implementation details of dokieli. Implementation is ongoing, and we conclude with lessons learnt so far and a discussion of the problems which remain to be solved.</p>
                         </div>
                     </section>
 
@@ -146,8 +146,6 @@
                             <p>The commonality .. </p>
 
                             <p>In contrast to above solutions, in order to author or participate, dokieli does not mandate centralisation by account creations on third-party services, software installations or configurations, or work with data formats which are not native to the Web.</p>
-
-                            <p id="pay-as-you-go">Additional features in dokieli can be used with the "pay-as-you-go" design approach. It works towards a solution e.g., proposed acid test where authors and Webizens can both publish and consume, and participate in discussions meanwhile having human and machine-friendly information all within their control.</p>
                         </div>
                     </section>
 
@@ -226,31 +224,31 @@
                                                 <img src="media/images/fig_modes-readonly.svg"/>
                                                 <figcaption>Read only.</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Temporary edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and exported to save changes (figure 2).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-edittemp.svg"/>
                                                 <figcaption>Temporary edit with export to save.</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Local persistent edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. Content may be edited through an in-browser JavaScript editor and in-browser Web Storage enabled to persist changes for a longer period (figure 3).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-editlocal.svg"/>
                                                 <figcaption>Persistent edit using Web Storage.</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Persistent edit:</strong> Hosted on a Solid server, edited through a web browser, with changes saved directly to the server (figure 4).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-editsolid.svg"/>
                                                 <figcaption>Persistent edit on a Solid server, with optional authentication.</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Data only:</strong> Hosted on anything that can serve HTML, content and metadata can be extracted using an RDFa parser and processed, remixed or re-displayed (figure 5).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-dataonly.svg"/>
                                                 <figcaption>Data only</figcaption>
                                             </figure>
-                                        
+
                                         </div>
                                     </section>
                                     <section id="interacting" rel="schema:hasPart" resource="#interacting" inlist="">
@@ -261,19 +259,19 @@
                                                 <img src="media/images/fig_modes-interactioncent.svg"/>
                                                 <figcaption>Centralised interactions</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Decentralised interactions:</strong> Hosted on a Solid server, with an inbox to receive notifications so third-parties can store their interactions in their own datastore (figure 7).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-interactiondecent.svg"/>
                                                 <figcaption>Decentralised interactions</figcaption>
                                             </figure>
-                                            
+
                                             <p><strong>Decoupled interactions:</strong> Hosted on anything that can serve HTML, with link to a notifications inbox on a Solid server, and third-parties can store their interactions in their own datastore (figure 8).</p>
                                             <figure>
                                                 <img src="media/images/fig_modes-interactiondecoup.svg"/>
                                                 <figcaption>Decoupled interactions</figcaption>
                                             </figure>
-                                            
+
                                         </div>
                                     </section>
                                 </div>
