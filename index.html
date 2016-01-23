@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Dive into dokieli</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet alternate" href="https://dokie.li/media/css/lncs.css" media="all" title="LNCS" />
         <link rel="stylesheet" href="https://dokie.li/media/css/acm.css" media="all" title="ACM" />
         <link rel="stylesheet" href="https://dokie.li/media/css/do.css" media="all" />
@@ -64,7 +65,7 @@
 
                 <dl id="document-modified">
                     <dt>Modified</dt>
-                    <dd><time datetime="2015-12-19T00:00:00Z" property="schema:dateModified" datatype="xsd:dateTime">2015-12-19</time></dd>
+                    <dd><time datetime="2016-01-23T00:00:00Z" property="schema:dateModified" datatype="xsd:dateTime">2016-01-23</time></dd>
                 </dl>
 
                 <dl id="document-license">
@@ -142,8 +143,14 @@
                             <section id="data-format" rel="schema:hasPart" resource="#data-format" inlist="">
                                 <h3 property="schema:name">Data format</h3>
                                 <div property="schema:description">
-                                    <p>dokieli documents are natively HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD may be embedded into HTML as raw data islands, though this causes unnecessary separation, and potential duplication and desynchronisation of data.</p>
+                                    <p>The native serialisation for dokieli documents is HTML+RDFa. HTML enables human-readable articles by default; RDFa, which is particularly well suited to the longform content dokieli is used to create, augments the documents with a machine-readable structure. We consider content of a document to be of foremost importance, and RDFa allows authors to add semantic structure to their ideas <em>inline</em>. Alternative syntaxes such as Turtle and JSON-LD may be embedded into HTML as raw data islands, though this causes unnecessary separation, and potential duplication and desynchronisation of data.</p>
 
+                                </div>
+                            </section>
+
+                            <section id="identifiers" rel="schema:hasPart" resource="#identifiers" inlist="">
+                                <h3 property="schema:name">Identifiers</h3>
+                                <div property="schema:description">
                                     <p>Stuff to do with #uris for linking here?</p>
                                 </div>
                             </section>
@@ -170,7 +177,7 @@
 
                                     <p>The progressive nature of dokieli documents is fault-tolerant. If the application scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
 
-                                    <p>dokieli is self-replicating, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to publish content.</p>
+                                    <p>dokieli is <em>self-replicating</em>, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to publish content.</p>
                                 </div>
                             </section>
 
@@ -228,7 +235,7 @@
                         <h2 property="schema:name">Implementation</h2>
                         <div property="schema:description">
                             <p>Our implementation is open source<sup><a href="#ref-gh">gh</a></sup> and available to try at <code>https://dokie.li</code>. In this section we describe specific features which meet the uses cases outlined previously.</p>
-                            
+
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
 
                                 <h3>Semantics and linking</h3>
@@ -242,8 +249,8 @@
                                     <p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>
                                 </div>
                             </section>
-                            
-                            <section id="rich-editing" rel="schema:hasPart" resource="#features" inlist="">
+
+                            <section id="rich-editing" rel="schema:hasPart" resource="#rich-editing" inlist="">
                                 <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description">
                                     <p>The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (figure #). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
@@ -255,24 +262,26 @@
                                     <figure><figcaption>screenshot of views</figcaption></figure>
                                 </div>
                             </section>
-                            
-                            <section id="authentication-and-access-control" rel="schema:hasPart" resource="#features" inlist="">
+
+                            <section id="authentication-and-access-control" rel="schema:hasPart" resource="#authentication-and-access-control" inlist="">
                                 <h3 property="schema:name">Authentication and access control</h3>
                                 <div property="schema:description">
                                     <p>People can identify themselves to a dokieli document through <a href="">WebID-TLS</a>. Users with a browser certificate installed and a matching FOAF profile containing the certificate public key are authenticated against their own Solid server if found, with a fallback to a known Solid authentication endpoint. This allows the dokieli instance to write to any Solid-compliant dataspace which the user is authorised to write to. This is how users can, for example, save changes to a document, or store interactions such as comments. While dokieli does not currently offer a UI for granting access to collaborators on a document, authors can use other Solid applications (eg. <a href="">warp</a>) to manage permissions of  data on their server, and thus allow other specific individuals (or the general public) to edit their articles.</p>
                                     <p>dokieli also displays an authenticated user's name and display picture if available in their profile. In future, we plan to take into account any preferences in a user's profile, as well as other documents they have previousy published, to enhance and personalise the UI.</p>
                                     </div>
                             </section>
-                            
+
                             <section id="storage" rel="schema:hasPart" resource="#storage" inlist="">
                                 <h3 property="schema:name">Storage</h3>
                                 <div property="schema:description">
-                                    <p>A document stored locally or on an ordinary Web server can be edited in a Web browser, and then exported (fig. # %) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+                                    <p>Articles may be stored on user's local filesystem or hosted from ordinary Web servers which can serve static HTML files, for example: university user pages, code repositories, personal or company webspace, or any file hosting.</p>
+                                    <p>dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+                                    <p>Articles can be edited in a Web browser, and then exported (fig. # %) to save changes.</p>
                                     <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (fig # % save button). The <em>new</em> (fig # %) and <em>save as</em> (fig # %) buttons prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal datastore, dokieli presents a file browser, through which the user can click to choose where to save (figure # browser). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses a simple HTTP PUT to replicate the HTML and RDFa that constitutes an instance, into the chosen datastore. The user has the option to copy the JavaScript and CSS to their own space as well, link to them from a CDN or link to them from the document they are starting from (figure # browser w labelled baseurl).</p>
                                     <figure><figcaption>file browser woo (with baseurl selection labelled)</figcaption></figure>
                                 </div>
                             </section>
-                            
+
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
                                 <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description">
@@ -285,7 +294,12 @@
                             </section>
                             <figure><figcaption>annotated screenshot of the Do menu</figcaption></figure>
                         </div>
-                        <dl id="ref-gh"><dt>gh</dt> <dd>https://github.com/linkeddata/dokieli</dd></dl>
+                        <aside class="note">
+                            <dl id="ref-gh">
+                                <dt>gh</dt>
+                                <dd><a href="https://github.com/linkeddata/dokieli">https://github.com/linkeddata/dokieli</a></dd>
+                            </dl>
+                        </aside>
                     </section>
 
                     <section id="social-and-technical-impact" rel="schema:hasPart" resource="#social-and-technical-impact" inlist="">
@@ -298,22 +312,22 @@
                     </section>
 
                     <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
-                        <h2 about="#conclusions" property="schema:name">Dive in!</h2>
+                        <h2 property="schema:name">Conclusions</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
-                            <p>Conclusions</p>
-                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://dokie.li/dive-into-dokieli, or create a copy that you can edit yourself.</p>
-                            
+
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
                                     <p>There remains lots of work to be done... list some things here... and list some things we're not sure how to solve yet eg. templating perhaps? Improving RDFa UI. Access control (eg. 'invite to collaborate') through the dokieli UI. Tracking changes to Solid, including things like new auth mechanisms.</p>
                                 </div>
                             </section>
+
+                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://dokie.li/dive-into-dokieli, or create a copy that you can edit yourself.</p>
                         </div>
                     </section>
 
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
-                        <h2 about="#acknowledgements" property="schema:name">Acknowledgements</h2>
+                        <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
                             <p>We would like to thank the academy.</p>
                         </div>
