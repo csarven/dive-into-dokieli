@@ -202,11 +202,11 @@
                                 <h3 property="schema:name">Data storage</h3>
                                 <div property="schema:description">
                                     <p>The owner of a dokieli document has full control and a great deal of flexibility over where to store their article. There are no centralised silos or gatekeepers. However, the capabilities of the system in which a document is stored has an effect on the features which are enabled. At the simplest level, documents can be served from the local filesystem for individual use. To publish documents more widely, they can be hosted on an ordinary Web server, and disseminated with a URL.</p>
-                                    <p>dokieli also implements <em>Solid</em>, a set of protocols and conventions based on the Linked Data Platform (LDP) W3C recommendations <mark>[cite]</mark>. Hosting a dokieli document on a Solid server allows the author to edit the document directly on the server, and grant permissions to collaborators to do so as well.</p>
-                                    <p>An article is the subject of feedback and social interactions such as annotations and reviews. A Solid server can additionally be employed to host these interactions, either in a space owned by the author of the article, or in a more decentralised manner, by allowing a commenter to save their message in their own space. In the latter case, the author is able to configure an <em>inbox</em> on their own Solid server through the dokieli UI, to which notifications of new third-party interactions are sent. These interactions are then displayed alongside the original document, even if the document itself is hosted on a non-Solid Web server, and the article serves as a centerpiece for conversation with as many participants as are inclined to join.</p>
+                                    <p>dokieli also implements <em>Solid</em>, a set of protocols and conventions based on the Linked Data Platform (LDP) W3C recommendations <mark>[cite]</mark>. This incorporates authentication, access control and read and write access to a personal datastore. Hosting a dokieli document on a Solid server allows the author to edit the document directly from a space they control, and grant permissions to collaborators to do so as well.</p>
+                                    <p>An article is the subject of feedback and social interactions such as annotations and reviews. A Solid server can additionally be employed to host these interactions, either in a space owned by the author of the article, or in a more decentralised manner, by allowing a commenter to save their message in their <em>own</em> space. In the latter case, the author is able to configure an <em>inbox</em> on their own Solid server through the dokieli UI, to which notifications of new third-party interactions are sent. These interactions are then displayed alongside the original document, even if the document itself is hosted on a non-Solid Web server, and the article serves as a centerpiece for conversation with as many participants as are inclined to join.</p>
                                 </div>
                             </section>
-
+                            
                             <section id="modes-of-operation" rel="schema:hasPart" resource="#modes-of-operation" inlist="">
                                 <h3 property="schema:name">Modes of operation</h3>
                                 <div property="schema:description">
@@ -389,9 +389,10 @@
                           </section>
 
                           <section id="data-ownership" rel="schema:hasPart" resource="#data-ownership" inlist="">
-                              <h3 property="schema:name">Data ownership</h3>
+                              <h3 property="schema:name">Data ownership and reuse</h3>
                               <div property="schema:description">
                                   <p>Normalisation of data ownership by making it as easy as clicking a button.</p>
+                                  <p>A particular strength of the Linked Data approach is that data produced with dokieli is reusable by other applications, and easily integrated with data from other sources.</p>
                                   <p>Discourage service lock-in.</p>
                               </div>
                           </section>
@@ -401,7 +402,7 @@
                     <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
                         <h2 property="schema:name">Conclusions</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
-
+                            
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
