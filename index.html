@@ -84,7 +84,7 @@
                     <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
                         <h2 property="schema:name">Introduction</h2>
                         <div property="schema:description" resource="#introduction" typeof="deo:Introduction" datatype="rdf:HTML">
-                            <p><q cite="https://www.youtube.com/watch?v=1yLNGUeHapA&t=50s">When I saw the computer, I said, ‘at last we can escape from the prison of paper’, and that was what my whole hypertext idea was about in 1960 and since. Contrarily, what did the other people do, they <strong>imitated paper</strong>, which to me seems totally insane</q> - <cite><a href="http://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a></cite> [<a class="ref" href="#ref-9">9</a>].</p>
+                            <p><q cite="https://www.youtube.com/watch?v=1yLNGUeHapA&amp;t=50s">When I saw the computer, I said, ‘at last we can escape from the prison of paper’, and that was what my whole hypertext idea was about in 1960 and since. Contrarily, what did the other people do, they <strong>imitated paper</strong>, which to me seems totally insane</q> - <cite><a href="http://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a></cite> [<a class="ref" href="#ref-9">9</a>].</p>
 
                             <!--<p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>-->
 
@@ -105,18 +105,24 @@
 
                             <p>The <a href="http://csarven.ca/call-for-linked-research">Linked Research initiative</a> [<a href=""></a>] takes a critical look at the current level of access to academic work, putting out a call for better presentation, discoverability and reuse of research objects. We keep in mind the proposed <a href="http://csarven.ca/enabling-accessible-knowledge#acid-test">acid test</a> [<a href=""></a>] to verify the openness, accessibility and flexibility of approaches to scholarly communication. This is intended to improve opportunities for knowledge acquisition and education through: fine-grained identification of arguements and concepts; linking for concept reuse and building information networks; embedding of machine-readable semantics for fast aggregation and remixing of work; interactive and executable interfaces for improved learnability.</p>
 
-                            <p>These areas of interest cover anywhere from data-driven journalist, online news, scholarly articles and peer-reviews, to casual communication through blogging and social media, but the theme of widening participation through spreading of knowledge and ideas in accessible ways is central to our motivation.</p>
+                            <p>These areas of interest cover anywhere from data-driven journalism, online news, scholarly articles and peer-reviews, to casual communication through blogging and social media, but the theme of widening participation through spreading of knowledge and ideas in accessible ways is central to our motivation.</p>
 
                             <p>We summarise these areas with a list of requirements that implementations of our architecture should meet.</p>
 
-                            <ul id="requirements" resource="#requirements"><!-- TODO: Sarven can you rdfa up this list properly? -->
-                                <li>Publication and sharing of knowledge and ideas is encouraged with <em>user friendly</em> content creation interfaces.</li>
-                                <li>Discussion and commentary is promted through integration of tools for <em>social interaction</em> and <em>notification</em>.</li>
-                                <li>Data is stored in a <em>decentralised</em> way, in a location that the creator controls.</li>
-                                <li>Data is <em>loosely coupled</em> with the applications used to create and view it, and machine-readable, so that it is <em>reusable</em> by other applications.</li>
-                                <li>Applications and data formats are <em>progressivey enhanced</em> such that content is minimally accessible to users with different capabilities and technical resources.</li>
-                            </ul>
-                                
+                            <div id="requirements" about="" rel="schema:hasPart" resource="#requirements">
+                                <dl>
+                                    <dt property="schema:name">Requirements</dt>
+                                    <dd property="schema:description" datatype="rdf:HTML">
+                                        <ul>
+                                            <li>Publication and sharing of knowledge and ideas is encouraged with <em>user friendly</em> content creation interfaces.</li>
+                                            <li>Discussion and commentary is prompted through integration of tools for <em>social interaction</em> and <em>notification</em>.</li>
+                                            <li>Data is stored in a <em>decentralised</em> way, in a location that the creator controls.</li>
+                                            <li>Data is <em>loosely coupled</em> with the applications used to create and view it, and machine-readable, so that it is <em>reusable</em> by other applications.</li>
+                                            <li>Applications and data formats are <em>progressively enhanced</em> such that content is minimally accessible to users with different capabilities and technical resources.</li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
                         </div>
                     </section>
 
@@ -357,7 +363,7 @@
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
                                 <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description">
-                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them (figure # <mark>we should actually implement this</mark>). This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). For example. when an annotation is made, dokieli follows the <code>inbox</code> link and writes a notification there <mark>(figure # for example notification turtle)</mark>. When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document <mark>(figure # displaying interactions)</mark>.
+                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them (figure # <mark>we should actually implement this</mark>). This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). For example. when an annotation is made, dokieli follows the <code>inbox</code> link and writes a notification there <mark>(figure # for example notification turtle)</mark>. When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document <mark>(figure # displaying interactions)</mark>.</p>
 
                                     <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date in which the request was submitted, who submitted, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
 
