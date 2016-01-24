@@ -84,6 +84,10 @@
                     <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
                         <h2 property="schema:name">Introduction</h2>
                         <div property="schema:description" resource="#introduction" typeof="deo:Introduction" datatype="rdf:HTML">
+                            <p><mark>TODO: Sarven</mark>, come up with a clever quote.</p>
+
+                            <p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>
+
                             <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa fosters accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data.</p>
 
                             <p>We explore the feasibility of this architecture through an implementation, which serves as the focus of this article. dokieli is a client-side application for authoring, publishing and interaction with documents. We discuss the use cases we are addressing, existing standards and tools on which we have built, as well as specific implementation details of dokieli. Implementation is ongoing, and we conclude with lessons learnt so far and a discussion of the problems which remain to be solved.</p>
@@ -95,6 +99,8 @@
                         <div property="schema:description">
                             <p>Use cases met (and intended to meet?). Baseline success criteria?</p>
 
+                            <p>Authoring, annotation, social notifications</p>
+
                             <p>Journalism, news</p>
 
                             <p>Academic articles, peer-reviews</p>
@@ -103,8 +109,9 @@
 
                             <p>Prose content... flowable data... interactivity</p>
 
-                            <p>One of the most widely used forms of language is <em>prose</em> which exhibits the grammatical structure and a natural flow of speech. This is apparent in all forms of articles, whether they are in the form of blog posts, literature, or scholarly publications.</p>
-                            <p>XXX: Revisit <a href="http://www.w3.org/TR/dpub-annotation-uc/">http://www.w3.org/TR/dpub-annotation-uc/</a> and see what's good for discussion.</p>
+                            <p>The W3C <a href="https://www.w3.org/annotation/">Web Annotation Working Group</a> and <a href="https://www.w3.org/dpub/IG/wiki/Main_Page">Digital Publishing Interest Group</a> put forward a set of <a href="https://www.w3.org/annotation/wiki/Use_Cases">use cases</a>. One intuitive use case for annotation is <a href="https://www.w3.org/TR/dpub-annotation-uc/#commenting-on-a-span-of-text">commenting on a span of text</a>, e.g., a reviewer annotates a sentence by suggesting that it needs citation.</p>
+
+                            <p>https://www.w3.org/wiki/Socialwg/Social_API/User_stories -- liking</p>
 
                             <section id="requirements" rel="schema:hasPart" resource="#requirements" inlist="">
                                 <h3 property="schema:name">Requirements</h3>
@@ -356,7 +363,8 @@
                           <section id="data-generation" rel="schema:hasPart" resource="#data-generation" inlist="">
                               <h3 property="schema:name">Data generation</h3>
                               <div property="schema:description">
-                                  <p>Semantic structure in human knowledge and ideas is somewhat difficult to capture, and as a result the Linked Open Data cloud is lacking in this kind of content. Through automatic insertion of RDFa into articles and social interactions, and integration of a semantic annotation UI into a generic authoring application, we anticipate that a side effect of dokieli use will be an influx of previously uncommon but highly valuable Linked Open Data into the Web. Mining, reusing and remixing this data has the potential to give rise to new threads of conversation, connections between and perspectives on ideas and experiences. We are focussing on academic research as a forum for encouraging knowledge sharing with dokieli through the <a href="http://csarven.ca/enabling-accessible-knowledge">Linked Research</a> initiative, as an area in which augmenting content with machine-readable semantics can really improve knowledge transfer to benefit researchers.</p>
+                                  <p>Semantic structure in human knowledge and ideas is somewhat difficult to capture, and as a result the Linked Open Data cloud is lacking in this kind of content. This is especially true in context of scholarly communication in Web science. Through automatic insertion of RDFa into articles and social interactions, and integration of a semantic annotation UI into a generic authoring application, we anticipate that a side effect of dokieli use will be an influx of previously uncommon but highly valuable Linked Open Data into the Web. Mining, reusing and remixing this data has the potential to give rise to new threads of conversation, connections between and perspectives on ideas and experiences. We are focussing on scholarly communication as a forum for encouraging knowledge sharing with dokieli through the <a href="http://csarven.ca/call-for-linked-research">Linked Research</a> [] initiative, as an area in which augmenting content with machine-readable semantics can really improve knowledge transfer to benefit researchers.</p>
+
                                   <p><mark>something else to add about the social stuff in particular?</mark></p>
                               </div>
                           </section>
@@ -388,7 +396,7 @@
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
                         <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
-                            <p>We would like to thank the academy.</p>
+                            <p>We would like to thank the academy. Special thanks to MIT folks (Andrei Sambra, Sandro Hawke, Nicola Greco and Tim Berners-Lee).</p>
                         </div>
                     </section>
 
