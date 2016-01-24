@@ -164,7 +164,7 @@
                             <section id="identifiers" rel="schema:hasPart" resource="#identifiers" inlist="">
                                 <h3 property="schema:name">Identifiers</h3>
                                 <div property="schema:description">
-                                    <p>As dokieli documents are published on the Web, they have their own URI. This can be used to refer unambiguously to the document for example in a list of publications by the author, or in indicating the subject of a reply. Further, any individual word, phrase, paragraph, or other subsection of a document can have its own unique identifier using a fragment URI. This enables responses to be targeted very specifically at parts of a document; when additional semantics are applied to relationships, we have the power to create links that say things like 'I like <em>this</em> concept', 'I disagree with <em>this</em> proposal', 'I have reproduced <em>this</em> result'. Within dokieli documents, links can be created to external concepts in the Linked Open Data cloud, aggregating related topics and creating unambiguous references.</p>
+                                    <p>As dokieli documents are published on the Web, they have their own URI. This can be used to refer unambiguously to the document for example in a list of publications by the author, or in indicating the subject of a reply. Further, any individual word, phrase, paragraph, or other subsection of a document can have its own unique identifier using a fragment URI. This enables responses to be targeted very specifically at parts of a document; when additional semantics are applied to relationships, we have the power to create links that say things like 'I like <em>this</em> concept', '<em>this</em> sentence should be clarified', 'this result disagrees with <em>those</em> conclusions'. Within dokieli documents, links can be created to external concepts in the Linked Open Data cloud, aggregating related topics and creating unambiguous references. The dokieli UI provides anchors for all fragments in the margins of a document.</p>
                                 </div>
                             </section>
 
@@ -271,7 +271,6 @@
                                                 <img src="media/images/fig_modes-interactiondecoup.svg"/>
                                                 <figcaption>Decoupled interactions</figcaption>
                                             </figure>
-
                                         </div>
                                     </section>
                                 </div>
@@ -285,15 +284,18 @@
                             <p>Our implementation is open source<sup><a href="#ref-gh">gh</a></sup> and available to try at <code><a href="https://dokie.li/">https://dokie.li/</a></code>. In this section we describe specific features which meet the uses cases outlined previously.</p>
 
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
-
                                 <h3>Semantics and linking</h3>
                                 <div property="schema:description">
-                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the selection. <mark>Write what happens by default when inputs here are left blank.</mark></p>
-                                    <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of JSON-LD or Turtle (figure #).</p>
+                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object of a statement, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the subject or object.</p>
+
+                                    <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of Turtle, JSON-LD, or TriG (figure #).</p>
+
                                     <p>Figure # shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
+
                                     <figure><figcaption>RDFA embedding screenshot</figcaption></figure>
                                     <figure><figcaption>data island embedding screenshot</figcaption></figure>
                                     <figure><figcaption>data visualisation</figcaption></figure>
+
                                     <p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>
                                 </div>
                             </section>
@@ -305,7 +307,7 @@
 
                                     <p id="auto-numbering">Tables of contents, tables, and figures are automatically calculated from the document contents and displayed as in figure #. The user can also drag and drop here to conveniently re-order sections of the document. Similarly links within a document are automatically compiled into an academic reference list if required by the author.</p>
 
-                                    <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one.</p>
+                                    <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one, either through user-agent's built-in feature or through dokieli's menu.</p>
                                     <script>//<![CDATA[
                                     var actionViews = $('<span id="action-views" class="do">These buttons can also trigger the views in this article: </span>');
                                     var context = $('#stylesheets');
@@ -339,7 +341,8 @@
                             <section id="authentication-and-access-control" rel="schema:hasPart" resource="#authentication-and-access-control" inlist="">
                                 <h3 property="schema:name">Authentication and access control</h3>
                                 <div property="schema:description">
-                                    <p>People can identify themselves to a dokieli document through <a href="">WebID-TLS</a>. Users with a browser certificate installed and a matching FOAF profile containing the certificate public key are authenticated against their own Solid server if found, with a fallback to a known Solid authentication endpoint. This allows the dokieli instance to write to any Solid-compliant dataspace which the user is authorised to write to. This is how users can, for example, save changes to a document, or store interactions such as comments. While dokieli does not currently offer a UI for granting access to collaborators on a document, authors can use other Solid applications (eg. <a href="">warp</a>) to manage permissions of  data on their server, and thus allow other specific individuals (or the general public) to edit their articles.</p>
+                                    <p>People can identify themselves to a dokieli document through <a href="">WebID-TLS</a>. Users with a browser certificate installed and a matching FOAF profile containing the certificate public key are authenticated against their own Solid server if found, with a fallback to a known Solid authentication endpoint. This allows the dokieli instance to write to any Solid-compliant dataspace which the user is authorised to write to. This is how users can, for example, save changes to a document, or store interactions such as comments. While dokieli does not currently offer a UI for granting access to collaborators on a document, authors can use other Solid applications (eg. <a href="">warp</a>) to manage permissions of data on their server, and thus allow other specific individuals (or the general public) to edit their articles.</p>
+
                                     <p>dokieli also displays an authenticated user's name and display picture if available in their profile. In future, we plan to take into account any preferences in a user's profile, as well as other documents they have previousy published, to enhance and personalise the UI.</p>
                                     </div>
                             </section>
@@ -351,7 +354,7 @@
 
                                     <p>Articles can be edited in a Web browser, and then exported (fig. # %) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
 
-                                    <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (fig # % save button). The <em>new</em> (fig # %) and <em>save as</em> (fig # %) buttons prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal dataspace, dokieli presents a dataspace browser, through which the user can click to choose where to save (figure # browser). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses an <code>HTTP PUT</code> to replicate the HTML+RDFa that constitutes an instance, into the chosen dataspace. The user has the option to copy media and scripts to their own space as well, link to them from a <abbr title="Content Delivery Network">CDN</abbr> or link to them from the document they are starting from (figure # browser w labelled baseurl).</p>
+                                    <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (fig # % save button). The <em>new</em> (fig # %) and <em>save as</em> (fig # %) buttons prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal dataspace, dokieli presents a dataspace browser, through which the user can click to choose where to save (figure # browser). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses an <code>HTTP POST</code> or <code>PUT</code> to replicate the HTML+RDFa that constitutes an instance, into the chosen dataspace. The user has the option to copy media and scripts to their own space as well, link to them from a <abbr title="Content Delivery Network">CDN</abbr> or link to them from the document they are starting from (figure # browser w labelled baseurl).</p>
 
                                     <figure><figcaption>file browser woo (with baseurl selection labelled)</figcaption></figure>
                                 </div>
@@ -383,13 +386,15 @@
                                         <figcaption property="schema:name">A Solid inbox notification.</figcaption>
                                     </figure>
 
-                                    <p>dokieli itself does not offer a mechanism for authors to manage their notifications or choose which interactions appear, as other applications which are specialised for these tasks are under development as part of the Solid apps ecosystem. <mark>(Maybe link to solid-inbox here even though this doesn't really work for us right now. Would be good to knock something up that works with document/para level inboxes if possible)</mark></p>
+                                    <p>dokieli itself does not offer a mechanism for authors to manage their notifications or choose which interactions appear, as other applications which are specialised for these tasks are under development as part of the Solid application ecosystem.</p>
 
-                                    <p>An author can also opt to allow anonymous interactions with their documents by pointing to a publicly writeable storage location in their own space, and store interactions on behalf of their audience.<mark>Question: do we or do we not also send notifications in this case?</mark></p>
+                                    <p>An author can also opt to allow anonymous interactions with their documents by pointing to a publicly writeable storage location in their own space, and store interactions on behalf of their audience.</p>
                                  </div>
                             </section>
+
                             <figure><figcaption>annotated screenshot of the Do menu</figcaption></figure>
                         </div>
+
                         <aside class="note">
                             <dl id="ref-gh">
                                 <dt>gh</dt>
@@ -400,22 +405,22 @@
 
                     <section id="social-and-technical-impact" rel="schema:hasPart" resource="#social-and-technical-impact" inlist="">
                         <h2 about="#social-and-technical-impact" property="schema:name">Social and Technical Impact</h2>
+
                         <div about="#social-and-technical-impact" property="schema:description">
-
-                          <section id="data-generation" rel="schema:hasPart" resource="#data-generation" inlist="">
-                              <h3 property="schema:name">Data generation</h3>
-                              <div property="schema:description">
-                                  <p>Semantic structure in human knowledge and ideas is somewhat difficult to capture, and as a result the Linked Open Data cloud is lacking in this kind of content. This is especially true in context of scholarly communication in Web science. Through automatic insertion of RDFa into articles and social interactions, and integration of a semantic annotation UI into a generic authoring application, we anticipate that a side effect of dokieli use will be an influx of previously uncommon but highly valuable Linked Open Data into the Web. Mining, reusing and remixing this data has the potential to give rise to new threads of conversation, connections between and perspectives on ideas and experiences. We are focussing on scholarly communication as a forum for encouraging knowledge sharing with dokieli through the <a href="http://csarven.ca/call-for-linked-research">Linked Research</a> [] initiative, as an area in which augmenting content with machine-readable semantics can really improve knowledge transfer to benefit researchers.</p>
-
-                                  <p><mark>something else to add about the social stuff in particular?</mark></p>
-                              </div>
+                            <section id="data-generation" rel="schema:hasPart" resource="#data-generation" inlist="">
+                                <h3 property="schema:name">Data generation</h3>
+                                <div property="schema:description">
+                                    <p>Semantic structure in human knowledge and ideas is somewhat difficult to capture, and as a result the Linked Open Data cloud is lacking in this kind of content. This is especially true in context of scholarly communication in Web science. Through automatic insertion of RDFa into articles and social interactions, and integration of a semantic annotation UI into a generic authoring application, we anticipate that a side effect of dokieli use will be an influx of previously uncommon but highly valuable Linked Open Data into the Web. Mining, reusing and remixing this data has the potential to give rise to new threads of conversation, connections between and perspectives on ideas and experiences. We are focussing on scholarly communication as a forum for encouraging knowledge sharing with dokieli through the <a href="http://csarven.ca/call-for-linked-research">Linked Research</a> [] initiative, as an area in which augmenting content with machine-readable semantics can really improve knowledge transfer to benefit researchers.</p>
+                                </div>
                           </section>
 
                           <section id="data-ownership" rel="schema:hasPart" resource="#data-ownership" inlist="">
                               <h3 property="schema:name">Data ownership and reuse</h3>
                               <div property="schema:description">
                                   <p>Normalisation of data ownership by making it as easy as clicking a button.</p>
+
                                   <p>A particular strength of the Linked Data approach is that data produced with dokieli is reusable by other applications, and easily integrated with data from other sources.</p>
+
                                   <p>Discourage service lock-in.</p>
                               </div>
                           </section>
@@ -425,14 +430,15 @@
                     <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
                         <h2 property="schema:name">Conclusions</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
-                                    <p>Lessons learnt</p>
-                                    <p>discussion of problems to be solved</p>
+                            <p>Lessons learnt</p>
+                            <p>discussion of problems to be solved</p>
 
 
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
                                     <p>Provenance</p>
+                                    <p>Share / Ping library... github issue</p>
 
                                     <p id="data-shapes">The W3C Shapes Constraint Language (SHACL) vocabulary is being <a href="https://github.com/linkeddata/dokieli/issues/105">considered</a> to describe the constraints of notifications in inboxes. This is so that authors can communicate information about data structures associated with the incoming notification for example to verify, as well as to drive the user interface.</p>
 
@@ -453,7 +459,7 @@
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
                         <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
-                            <p>We would like to thank the academy. Special thanks to MIT folks (Andrei Sambra, Sandro Hawke, Nicola Greco and Tim Berners-Lee).</p>
+                            <p>We would like to thank the academy. Special thanks to MIT/W3C folks (Andrei Sambra, Sandro Hawke, Nicola Greco and Tim Berners-Lee).</p>
                         </div>
                     </section>
 
