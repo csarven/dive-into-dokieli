@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Dive into dokieli</title>
+        <title>dokieli: decentralised authoring, annotations and social notifications</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet alternate" href="https://dokie.li/media/css/lncs.css" media="all" title="LNCS" />
         <link rel="stylesheet" href="https://dokie.li/media/css/acm.css" media="all" title="ACM" />
@@ -21,7 +21,7 @@
     <body about="" typeof="schema:CreativeWork sioc:Post prov:Entity" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: http://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# sterms: http://www.w3.org/ns/solid/terms#">
         <main>
             <article about="" typeof="schema:ScholarlyArticle">
-                <h1 property="schema:name">Dive into dokieli</h1>
+                <h1 property="schema:name">dokieli: decentralised authoring, annotations and social notifications</h1>
 
                 <div id="authors">
                     <dl id="author-name">
@@ -45,7 +45,7 @@
 
                 <dl id="document-identifier">
                     <dt>Document ID</dt>
-                    <dd><a href="http://csarven.ca/dive-into-dokieli">http://csarven.ca/dive-into-dokieli</a></dd>
+                    <dd><a href="http://csarven.ca/dokieli">http://csarven.ca/dokieli</a></dd>
                 </dl>
 
                 <dl id="document-inbox">
@@ -77,7 +77,7 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and documents are represented as Linked Data, allowing: decentralised storage and data ownership; fine-grained semantic structure through HTML+RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>https://csarven.ca/dive-into-dokieli</code>.</p>
+                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and documents are represented as Linked Data, allowing: decentralised storage and data ownership; fine-grained semantic structure through HTML+RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>http://csarven.ca/dokieli</code>.</p>
                         </div>
                     </section>
 
@@ -431,10 +431,12 @@
                         <h2 property="schema:name">Conclusions</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
                             <p>In this article we discussed dokieli, an implementation of a proposed architecture for realising a decentralised and accessible participatory knowledge space. By building on existing standards and tooling we contribute towards their ongoing improvement and help to advance the state-of-the-art in user-friendly Linked Data applications, and decentralised social Web technologies. We have shown that native Web technologies coupled with Linked Data enhancements provide a sound grounding for human- and machine-friendly content publishing, and that cutting edge work on personal datastores can be employed on top in a progressive manner. We reiterate that enabling this kind of complex functionality on an as-needed basis serves as a gateway for users and lowers the barrier to entry more effectively than an all-or-nothing approach.</p>
-                            
-                            <p>We anticipate that a further implications of our work is expansion of the missing parts of the LOD cloud on scholarly communication, social interactions, and detailed discourse around ideas an experiences.</p>
 
-                            <p id="challenges">Meeting the combination of needs we outlined here comes with many challenges. This is not a new problem, and there are ongoing efforts and initiatives advancing these along various fronts. Having an architecture and tooling in place does not necessarily translate to adoption of technologies or even principles. We have not addressed social, economic, ethical or legal issues around data ownership, decentralised identity or Web applications decoupled from user data. Nonetheless, our efforts iterate towards better understanding of what is needed to improve tooling and user interfaces, so that we may move this area forward alongside related iniatives, and gradually lower the barrier to entry for participation in a decentralised, social, semantic Web.</p>
+                            <p>We anticipate that a further implications of our work is expansion of the missing parts of the LOD cloud on scholarly communication, social interactions, and detailed discourse around ideas and experiences.</p>
+
+                            <p id="challenges">Meeting the combination of needs we outlined here comes with many challenges. This is not a new problem, and there are ongoing efforts and initiatives advancing these along various fronts. Having an architecture and tooling in place does not necessarily translate to adoption of technologies or even principles. We have not addressed social, economic, ethical or legal issues around data ownership, decentralised identity or Web applications decoupled from user data. Nonetheless, our efforts iterate towards better understanding of what is needed to improve tooling and user interfaces, so that we may move this area forward alongside related initiatives, and gradually lower the barrier to entry for participation in a decentralised, social, semantic Web.</p>
+
+                            <p>We conclude by describing some of the remaining problems to be addressed in dokieli.</p>
 
                             <dl id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <dt property="schema:name">Next steps</dt>
@@ -453,7 +455,7 @@
 
                             <p>The development dokieli is open and accessible for all; <a href="https://github.com/linkeddata/dokieli">issues</a>, <a href="https://gitter.im/linkeddata/dokieli">discussion</a>. The reader is invited to get involved and help shape it to their needs.</p>
 
-                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://csarven.ca/dive-into-dokieli, or spawn a new or a copy that you can edit yourself.</p>
+                            <p>Try dokieli yourself right now! Leave a comment on this paper at http://csarven.ca/dokieli, or spawn a new or a copy that you can edit yourself.</p>
 
                             <p>There are still many challenges up ahead. Let's <em>make it so!</em></p>
                         </div>
@@ -462,7 +464,7 @@
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
                         <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
-                            <p>Special thanks to our colleagues at MIT/W3C; <a href="https://deiu.me/profile">Andrei Sambra</a>, <a href="https://www.w3.org/People/Sandro/">Sandro Hawke</a>, <a href="http://nicola.io/">Nicola Greco</a> and <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a>, as well as <a href="http://bblfish.net/">Henry Story</a> and <a href="http://melvincarvalho.com/#me">Melvin Carvalho</a>. We are also thankful to collaborate with colleagues at <a href="http://qcri.org.qa/">QCRI</a> through the <a href="http://crosscloud.org/">CrossCloud</a> project.</p>
+                            <p>Special thanks to our colleagues at <a href="http://mit.edu/">MIT</a>/<a href="https://www.w3.org/">W3C</a>; <a href="https://deiu.me/profile">Andrei Sambra</a>, <a href="https://www.w3.org/People/Sandro/">Sandro Hawke</a>, <a href="http://nicola.io/">Nicola Greco</a> and <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a>, as well as <a href="http://bblfish.net/">Henry Story</a> and <a href="http://melvincarvalho.com/#me">Melvin Carvalho</a>. We are also thankful to collaborate with colleagues at <a href="http://qcri.org.qa/">QCRI</a> through the <a href="http://crosscloud.org/">CrossCloud</a> project.</p>
                         </div>
                     </section>
 
