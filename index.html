@@ -50,7 +50,7 @@
 
                 <dl id="document-inbox">
                     <dt>Notifications Inbox</dt>
-                    <dd><a rel="sterms:inbox" href="inbox/">http://csarven.ca/dive-into-dokieli/inbox/</a></dd>
+                    <dd><a rel="sterms:inbox" href="https://dokieli.databox.me/inbox/">dokieli/inbox</a></dd>
                 </dl>
 
                 <dl id="document-in-reply-to">
@@ -77,7 +77,7 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and documents are represented as Linked Data, allowing: decentralised storage and data ownership; fine-grained semantic structure through RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>https://dokie.li/dive-into-dokieli</code>.</p>
+                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and documents are represented as Linked Data, allowing: decentralised storage and data ownership; fine-grained semantic structure through RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>https://csarven.ca/dive-into-dokieli</code>.</p>
                         </div>
                     </section>
 
@@ -432,11 +432,22 @@
                             <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
                                 <h3 property="schema:name">Next steps</h3>
                                 <div property="schema:description">
-                                    <p>There remains lots of work to be done... list some things here... and list some things we're not sure how to solve yet eg. templating perhaps? Improving RDFa UI. Access control (eg. 'invite to collaborate') through the dokieli UI. Tracking changes to Solid, including things like new auth mechanisms.</p>
+
+
+                                    <p>The W3C Shapes Constraint Language (SHACL) vocabulary is being <a href="https://github.com/linkeddata/dokieli/issues/105">considered</a> to describe the constraints of notifications in inboxes. This is so that authors can communicate information about data structures associated with the incoming notification for example to verify, as well as to drive the user interface.</p>
+
+                                    <p>eg. templating perhaps? Improving RDFa UI. Access control (eg. 'invite to collaborate') through the dokieli UI. Tracking changes to Solid, including things like new auth mechanisms.</p>
+
+                                    <p>There is a growing list of dokieli <a href="https://github.com/csarven/linked-research/wiki#examples-in-the-wild">articles in the wild</a>, i.e., researchers taking the initiative to publish their self-archived versions.</p>
+
+                                    <p>The development dokieli is open and accessible for all; <a href="https://github.com/linkeddata/dokieli">issues</a>, <a href="https://gitter.im/linkeddata/dokieli">discussion</a>. The reader is invited to get involved and help shape it to their needs.</p>
+
                                 </div>
                             </section>
 
-                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://dokie.li/dive-into-dokieli, or create a copy that you can edit yourself.</p>
+                            <p>Try dokieli yourself right now! Leave a comment on this paper at https://csarven.ca/dive-into-dokieli, or spawn a new or a copy that you can edit yourself.</p>
+
+                            <p><em>Make it so!</em></p>
                         </div>
                     </section>
 
