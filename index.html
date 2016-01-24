@@ -186,11 +186,11 @@
                             <section id="distribution" rel="schema:hasPart" resource="#distribution" inlist="">
                                 <h3 property="schema:name">Distribution</h3>
                                 <div property="schema:description">
-                                    <p>dokieli application logic, written in JavaScript, is distributed along with every document, ensuring all documents can be edited and interacted with. We consider this a <em>default</em> view of a document, rather than the <em>required</em> one however, as the data can still be extracted and used in other contexts by other RDF-aware applications.</p>
+                                    <p id="default-ui">dokieli application logic, written in JavaScript, is distributed along with every document, ensuring all documents can be edited and interacted with. We consider this a <em>default</em> UI of a document, rather than the <em>required</em> one however, as the data can still be extracted and used in other contexts by other RDF-aware applications.</p>
 
-                                    <p>The progressive nature of dokieli documents is fault-tolerant. If the application scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
+                                    <p id="fault-tolerant">The progressive nature of dokieli documents is fault-tolerant. If the application scripts or stylesheets are not available, the content is still accessible, allowing continuous utility, albeit in a read-only mode, rather than failing completely. A single document in HTML+RDFa is able to retain all of its core content and semantics without external dependencies.</p>
 
-                                    <p>dokieli is <em>self-replicating</em>, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to publish content.</p>
+                                    <p id="self-replicating">dokieli is <em>self-replicating</em>, in that the reader of a dokieli document can spawn an instance — either a copy or a brand new empty document — into their own storage space at the click of a button. There is no installation or setup process required to publish content.</p>
                                 </div>
                             </section>
 
@@ -430,21 +430,25 @@
                     <section id="conclusions" rel="schema:hasPart" resource="#conclusions" inlist="">
                         <h2 property="schema:name">Conclusions</h2>
                         <div about="#conclusions" property="schema:description" typeof="deo:Conclusion">
-                            <p>Lessons learnt</p>
+                            <p id="challenges">Trying to establish a decentralised Web comes with social and technical challenges. This is not a new problem, and there are ongoing efforts and initiatives on this front. Neither having the architecture and tooling in place does necessarily establishes or translates to an ideal Web in which anyone can participate, with true data ownership, using personal identities or personas. Hence, the technical challenges are only part of the problem. Social challenges come in different shapes; how do we get people to use dokieli for instance? or how do we convince people to have and manage their own personal online datastores? One way of looking at it is by acknowledging that decentralised solutions are not trivial to implement, and incremental (or revolutionary, by some other measures) improvements are needed to observe change.</p>
+
+                            <p>In this article we discussed a particular implementation on realizing a decentralised knowledge space by enabling content creators and participants control over their data, all meanwhile retaining semantic interoperability of the information on the Web.</p>
+
+                            <p id="lessons-learnt"></p>
+
                             <p>discussion of problems to be solved</p>
 
-
-                            <section id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
-                                <h3 property="schema:name">Next steps</h3>
-                                <div property="schema:description">
+                            <dl id="next-steps" rel="schema:hasPart" resource="#next-steps" inlist="">
+                                <dt property="schema:name">Next steps</dt>
+                                <dd about="#next-steps" property="schema:description" typeof="deo:FutureWork">
                                     <p>Provenance</p>
                                     <p>Share / Ping library... github issue</p>
 
                                     <p id="data-shapes">The W3C Shapes Constraint Language (SHACL) vocabulary is being <a href="https://github.com/linkeddata/dokieli/issues/105">considered</a> to describe the constraints of notifications in inboxes. This is so that authors can communicate information about data structures associated with the incoming notification for example to verify, as well as to drive the user interface.</p>
 
                                     <p>eg. templating perhaps? Improving RDFa UI. Access control (eg. 'invite to collaborate') through the dokieli UI. Tracking changes to Solid, including things like new auth mechanisms.</p>
-                                </div>
-                            </section>
+                                </dd>
+                            </dl>
 
                             <p>There is a growing list of dokieli <a href="https://github.com/csarven/linked-research/wiki#examples-in-the-wild">articles in the wild</a>, i.e., researchers taking the initiative to publish their self-archived versions.</p>
 
@@ -452,14 +456,14 @@
 
                             <p>Try dokieli yourself right now! Leave a comment on this paper at https://csarven.ca/dive-into-dokieli, or spawn a new or a copy that you can edit yourself.</p>
 
-                            <p><em>Make it so!</em></p>
+                            <p>There are still many challenges up ahead. Let's <em>make it so!</em></p>
                         </div>
                     </section>
 
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
                         <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements">
-                            <p>We would like to thank the academy. Special thanks to MIT/W3C folks (Andrei Sambra, Sandro Hawke, Nicola Greco and Tim Berners-Lee).</p>
+                            <p>We would like to thank the academy. Special thanks to our colleagues at MIT/W3C; Andrei Sambra, Sandro Hawke, Nicola Greco and Tim Berners-Lee, and Henry Story and Melvin Carvalho, as well as <a href="">QCRI</a> whom took steps towards creating and fostering a space towards a social Semantic Web via the <a href="http://crosscloud.org/">CrossCloud</a> project. This is for the <em>brave</em> ones.</p>
                         </div>
                     </section>
 
