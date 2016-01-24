@@ -302,10 +302,35 @@
                             <section id="rich-editing" rel="schema:hasPart" resource="#rich-editing" inlist="">
                                 <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description">
-                                    <p>The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (figure #). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
+                                    <p id="editor">The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (figure #). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
+
+                                    <p id="auto-numbering">Tables of contents, tables, and figures are automatically calculated from the document contents and displayed as in figure #. The user can also drag and drop here to conveniently re-order sections of the document. Similarly links within a document are automatically compiled into an academic reference list if required by the author.</p>
+
+                                    <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one.</p>
+                                    <script>//<![CDATA[
+                                    var actionViews = $('<span id="action-views" class="do">These buttons can also trigger the views in this article: </span>');
+                                    var context = $('#stylesheets');
+                                    context.after(actionViews);
+                                    DO.U.showViews(actionViews);
+                                    actionViews.find('h2').remove();
+                                    var nodeDetached = actionViews.detach();
+                                    context.append(nodeDetached);
+                                    //]]></script>
+                                    <style>/*<![CDATA[*/
+                                    @media screen {
+                                        #action-views.do:before { content:" "; }
+                                        #action-views.do:after { content:'.'; }
+                                        #action-views.do, #action-views.do * { display:inline !important; }
+                                        #action-views.do #views { margin-top:0; }
+                                        #action-views.do #views:before { content:''; }
+                                        #action-views.do li { margin-right:0; }
+                                        #action-views.do li:before { content:', '; }
+                                        #action-views.do li:first-child:before { content:''; }
+                                    }
+                                    /*]]>*/</style>
+
                                     <p><mark>Something about embedding runnable code / experiments / stats?</mark></p>
-                                    <p>Tables of contents and figures are automatically calculated from the document contents and displayed as in figure #. The user can also drag and drop here to conveniently re-order sections of the document. Similarly links within a document are automatically compiled into an academic reference list if required by the author.</p>
-                                    <p>dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one.</p>
+
                                     <figure><figcaption>screenshot of edit menu</figcaption></figure>
                                     <figure><figcaption>screenshot of toc</figcaption></figure>
                                     <figure><figcaption>screenshot of views</figcaption></figure>
