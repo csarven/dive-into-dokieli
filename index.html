@@ -77,9 +77,36 @@
                     <section id="abstract">
                         <h2>Abstract</h2>
                         <div property="schema:abstract" datatype="rdf:HTML">
-                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications, and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and the documents are compliant with Linked Data best practices, allowing: decentralised storage and data ownership; fine-grained semantic structure through HTML+RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at <code>http://csarven.ca/dokieli</code>.</p>
+                            <p>In this article we present an architecture for progressively enhanced user-facing linked data applications and demonstrate this architecture through an open source example implementation: <em>dokieli</em>. dokieli is a general purpose client-side application for document authoring, publication and interaction. Capabilities of the tool are enabled according to the needs and technical resources of the user. The editor is built on open Web standards and the documents are compliant with Linked Data best practices, allowing: decentralised storage and data ownership; fine-grained semantic structure through HTML+RDFa; direct in-browser editing from an LDP-based personal data store; social interactions with documents (such as annotations and replies), and notifications thereof. This document itself is a dokieli instance, available to interact with at http://csarven.ca/dokieli.</p>
                         </div>
                     </section>
+
+                    <section id="keywords">
+                        <h2>Keywords</h2>
+                        <div>
+                            <ul rel="schema:about">
+                                <li><a resource="http://dbpedia.org/resource/Human-computer_interaction" href="http://en.wikipedia.org/wiki/Human-computer_interaction">Human-computer interaction</a></li>
+                                <li><a resource="http://dbpedia.org/resource/Knowledge_acquisition" href="http://en.wikipedia.org/wiki/Knowledge_acquisition">Knowledge acquisition</a></li>
+                                <li><a resource="http://dbpedia.org/resource/Linked_Data" href="http://en.wikipedia.org/wiki/Linked_Data">Linked Data</a></li>
+                                <li><a resource="http://dbpedia.org/resource/Semantic_publishing" href="http://en.wikipedia.org/wiki/Semantic_publishing">Semantic publishing</a></li>
+                                <li><a resource="http://dbpedia.org/resource/Social_web" href="https://en.wikipedia.org/wiki/Social_web">Social web</a></li>
+                                <li><a resource="http://dbpedia.org/resource/Web_science" href="http://en.wikipedia.org/wiki/Web_science">Web science</a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="categories-and-subject-descriptors">
+                        <h2>Categories and Subject Descriptors</h2>
+                        <div>
+                            <ul rel="schema:about">
+                                <li><a resource="http://acm.rkbexplorer.com/ontologies/acm#H.1.2" href="http://www.acm.org/about/class/ccs98-html#H.1.2">H.1.2</a> [<strong>Information Systems</strong>]: Human information processing</li>
+                                <li><a resource="http://acm.rkbexplorer.com/ontologies/acm#H.4.m" href="http://www.acm.org/about/class/ccs98-html#H.4.m">H.4.m</a> [<strong>Information Systems Applications</strong>]: Linked Data</li>
+                                <li><a resource="http://acm.rkbexplorer.com/ontologies/acm#H.5.0" href="http://www.acm.org/about/class/ccs98-html#H.5.3">H.5.3</a> [<strong>Information Interfaces and Presentation</strong>]: Web-based interaction</li>
+                                <li><a resource="http://acm.rkbexplorer.com/ontologies/acm#I.7.4" href="http://www.acm.org/about/class/ccs98-html#I.7.4">I.7.4</a> [<strong>Document and Text Processing</strong>]: Electronic Publishing</li>
+                            </ul>
+                        </div>
+                    </section>
+
 
                     <section id="introduction" rel="schema:hasPart" resource="#introduction" inlist="">
                         <h2 property="schema:name">Introduction</h2>
@@ -90,7 +117,7 @@
 
                             <p id="evolvability">A long-lasting system must be <em>evolvable</em>. It is difficult to predict which technologies will endure over time, however we take inspiration from the <cite><a about="" rel="cito:agreesWith" href="http://www.w3.org/DesignIssues/Evolution.html">Evolution of the Web</a></cite> [<a class="ref" href="#ref-2">2</a>], and pursue features like simplicity, flexibility, decentralisation, interoperability, and tolerance.</p>
 
-                            <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. Progressive enhancement is a paradigm for Web application development that emerged circa 2003. A <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressively enhanced</a> Web application focuses on the content, starting with semantic HTML markup, and gradually adding more advanced CSS and JavaScript features if the user’s browser permits. An experience may be immensely improved by these extra features, but they are not <em>required</em> in order to access the information on the page. At the time, this gave Web developers a mechanism to improve accessibility across devices and mitigate against constraints of outdated browsers. We are expanding on this concept from considering the users' clients to also take into account users' own servers or personal datastores if available.</p>
+                            <p>We have combined commonplace online publishing practices with contemporary Web standards to create a novel architecture for <em>user-facing</em>, <em>progressively enhanced</em> Linked Data applications. Progressive enhancement is a paradigm for Web application development that emerged circa 2003. A <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressively enhanced</a> Web application focuses on the content, starting with semantic HTML markup, and gradually adding more advanced CSS and JavaScript features if the user’s browser permits. An experience may be immensely improved by these extra features, but they are not <em>required</em> in order to access the information on the page. At the time, this gave Web developers a mechanism to improve accessibility across devices and mitigate against constraints of outdated browsers. We are expanding on this concept from considering the users’ clients to also take into account users’ own servers or personal datastores if available.</p>
 
                             <p>We believe this has the potential to both proliferate high quality machine-readable data, and enhance human-friendly knowledge sharing on the Web. Our baseline technology of HTML+RDFa fosters accessibility by default, and serves as a foundation on which we can build layers of functionality until we reach the interactive social experiences that people expect from the Web today. This architecture is decentralised, affording users greater control of their data, and optionally enhanced through use of the <em><a href="https://github.com/solid/solid-spec">Solid</a></em> platform (described further in <a href="#data-storage">section 4.5</a>).</p>
 
@@ -107,7 +134,7 @@
 
                             <p>The W3C <a href="https://www.w3.org/annotation/">Web Annotation Working Group</a> and <a href="https://www.w3.org/dpub/IG/wiki/Main_Page">Digital Publishing Interest Group</a> put forward a set of <a href="https://www.w3.org/annotation/wiki/Use_Cases">use cases</a> for annotation activities. One intuitive use case for annotation is <a href="https://www.w3.org/TR/dpub-annotation-uc/#commenting-on-a-span-of-text">commenting on a span of text</a> (a reviewer annotates a sentence by suggesting that it needs citation).</p>
 
-                            <p>The <a href="http://csarven.ca/call-for-linked-research">Linked Research initiative</a> [<a class="ref" href="#ref-3">3</a>] takes a critical look at the current level of access to academic work, putting out a call for better presentation, discoverability and reuse of research objects. We keep in mind the proposed <a href="http://csarven.ca/enabling-accessible-knowledge#acid-test">acid test</a> [<a class="ref" href="#ref-4">4</a>] to verify the openness, accessibility and flexibility of approaches to scholarly communication. This is intended to improve opportunities for knowledge acquisition and education through: fine-grained identification of arguments and concepts; linking for concept reuse and building information networks; embedding of machine-readable semantics for fast aggregation and remixing of work; interactive and executable interfaces for improved learnability.</p>
+                            <p>The <a href="http://csarven.ca/call-for-linked-research">Linked Research initiative</a> [<a class="ref" href="#ref-3">3</a>] takes a critical look at the current level of access to academic work, putting out a call for better presentation, discoverability and reuse of research objects. We keep in mind the proposed <a href="http://csarven.ca/enabling-accessible-knowledge#acid-test">acid test</a> [<a class="ref" href="#ref-4">4</a>] to verify the openness, accessibility, and flexibility of approaches to scholarly communication. This is intended to improve opportunities for knowledge acquisition and education through: fine-grained identification of arguments and concepts; linking for concept reuse and building information networks; embedding of machine-readable semantics for fast aggregation and remixing of work; interactive and executable interfaces for improved learnability.</p>
 
                             <p>These areas of interest cover anywhere from data-driven journalism, online news, scholarly articles and peer-reviews, to casual communication through blogging and social media, but the theme of widening participation through spreading of knowledge and ideas in accessible ways is central to our motivation.</p>
 
@@ -136,7 +163,7 @@
                         <div property="schema:description" datatype="rdf:HTML">
                             <p>There exists a variety of tooling for semantic content authoring, personal data storage and sharing, distribution of social notifications, and integration and linking of ideas and concepts. Here we discuss a non-exhaustive selection in an attempt to succinctly give an overview of the current landscape.</p>
 
-                            <p id="googledocs-medium-authorea"><a href="https://docs.google.com/">Google Docs</a>, <a href="https://medium.com/">Medium</a>, and <a href="https://www.authorea.com/">Authorea</a> are Web applications for collaborative creation and publication of content which require account creations and data storage with centralised services. They allow multiple participants to annotate and hold discussions around the primary content; users must access their centralised accounts to be notified of updates to conversations, and data from both the main content and related discussion is confined to the service which was used to create it.</p>
+                            <p id="googledocs-medium-authorea"><a href="https://docs.google.com/">Google Docs</a>, <a href="https://medium.com/">Medium</a>, and <a href="https://www.authorea.com/">Authorea</a> are Web applications for collaborative creation and publication of content which require account creation and data storage with centralised services. They allow multiple participants to annotate and hold discussions around the primary content; users must access their centralised accounts to be notified of updates to conversations, and data from both the main content and related discussion is confined to the service which was used to create it.</p>
 
                             <p id="hypothesis-genius"><a href="https://hypothes.is/">Hypothesis</a> and <a href="https://genius.com/">Genius</a> make it possible for users to leave annotations on different types of documents on the Web using a browser plugin or via a proxy. Annotations may be private or public, and can be threaded to form conversations around a piece of content. Despite allowing the attachment of annotations to resources hosted anywhere, they depend on centralised account creation and storage for the annotations themselves. Hypothesis is open source, with an API that uses the data model currently undergoing standardisation in the W3C Annotations Working Group, and may be self-hosted, but currently it is not possible to federate between different Hypothesis instances.</p>
 
@@ -178,7 +205,7 @@
                             <section id="vocabularies" rel="schema:hasPart" resource="#vocabularies" inlist="">
                                 <h3 property="schema:name">Vocabularies</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-                                    <p>dokieli does not mandate the use of any particular vocabularies as the content of an article dictates how it is best described. By default, dokieli documents make use of the following; these are replaced or more added at the discretion of the author.</p>
+                                    <p>dokieli does not mandate the use of any particular RDF vocabularies as the content of an article dictates how it is best described. By default, dokieli documents make use of the following; these are replaced or more added at the discretion of the author.</p>
 
                                     <ul>
                                         <li>General-purpose: <a href="https://schema.org/">schema.org</a></li>
@@ -217,12 +244,7 @@
                                 <h3 property="schema:name">Modes of operation</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
                                     <p>The core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate.</p>
-                                    <!---<p>XXX: Create SVGs</p>
-                                    <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
-                                        <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268" />
 
-                                        <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:name">Modes of operation.</figcaption>
-                                    </figure>-->
                                     <section id="publishing" rel="schema:hasPart" resource="#publishing" inlist="">
                                         <h4 property="schema:name">Publishing</h4>
                                         <div property="schema:description" datatype="rdf:HTML">
@@ -260,7 +282,6 @@
                                                 <img about="#figure-object-mode-data-only" typeof="doco:Figure" rel="schema:image" src="media/images/mode-data-only.svg" />
                                                 <figcaption about="#figure-caption-mode-data-only" typeof="doco:FigureLabel" property="schema:name">Data only</figcaption>
                                             </figure>
-
                                         </div>
                                     </section>
                                     <section id="interacting" rel="schema:hasPart" resource="#interacting" inlist="">
@@ -301,10 +322,9 @@
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Semantics and linking</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-
                                     <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring; <a href="#figure-dokieli-rdfa">figure 9</a> shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object of a statement, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the subject or object.</p>
 
-                                    <p>In addition, metadata that does not easily fit into prose (for example, <a href="http://nanopub.org">nanopublications</a>) can be embedded as a single block of Turtle, JSON-LD, or TriG (<a href="#figure-dokieli-nanopublication">figure 10</a>).</p>
+                                    <p>In addition, metadata that does not easily fit into prose (for example, <a href="http://nanopub.org/">Nanopublications</a>) can be embedded as a single block of Turtle, JSON-LD, or TriG (<a href="#figure-dokieli-nanopublication">figure 10</a>).</p>
 
                                     <p><a href="#figure-rdfa-visualisation">Figure 11</a> shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
 
@@ -315,7 +335,7 @@
 
                                     <figure id="figure-dokieli-nanopublication" about="#figure-dokieli-nanopublication" rel="schema:hasPart" typeof="doco:FigureBox">
                                         <img about="#figure-object-dokieli-nanopublication" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-nanopublication.png" width="480" />
-                                        <figcaption about="#figure-caption-dokieli-nanopublication" typeof="doco:FigureLabel" property="schema:name">Embedding a nanopublication.</figcaption>
+                                        <figcaption about="#figure-caption-dokieli-nanopublication" typeof="doco:FigureLabel" property="schema:name">Embedding a Nanopublication.</figcaption>
                                     </figure>
 
                                     <figure id="figure-rdfa-visualisation" about="#figure-rdfa-visualisation" rel="schema:hasPart" typeof="doco:FigureBox">
@@ -489,20 +509,18 @@
 
                                     <p id="provenance">Where applicable, scientific processes should be captured in a way that is machine-readable, encompassing workflow and provenance level data. This type of information plays an important role in reproducibility of work, and fostering trust and confidence in results (issues <a href="https://github.com/linkeddata/dokieli/issues/41">41</a> and <a href="https://github.com/linkeddata/dokieli/issues/119">119</a>).</p>
 
-                                    <p id="data-shapes">In order to improve the utility of social notifications sent and received by dokieli documents, we are considering the W3C <a href="https://www.w3.org/TR/shacl/">Shapes Constraint Language</a> (SHACL) vocabulary to describe the constraints notifications in particular cirumstances. This will allow authors to use third-party applications to verify incoming notifications according to their own requirements (<a href="https://github.com/linkeddata/dokieli/issues/105">issue 105</a>).</p>
+                                    <p id="data-shapes">In order to improve the utility of social notifications sent and received by dokieli documents, we are considering the W3C <a href="https://www.w3.org/TR/shacl/">Shapes Constraint Language</a> (SHACL) vocabulary to describe the constraints notifications in particular circumstances. This will allow authors to use third-party applications to verify incoming notifications according to their own requirements (<a href="https://github.com/linkeddata/dokieli/issues/105">issue 105</a>).</p>
                                 </dd>
                             </dl>
 
                             <p>There is a growing list of dokieli <a href="https://github.com/csarven/linked-research/wiki#examples-in-the-wild">articles in the wild</a>, that is, researchers taking the initiative to control their work through self-publication. We invite you to try dokieli yourself right now! Leave a comment on this paper at http://csarven.ca/dokieli, or spawn a new or a copy that you can edit yourself.</p>
-
-                            <p>There are still many challenges up ahead. Let’s <em>make it so!</em></p>
                         </div>
                     </section>
 
                     <section id="acknowledgements" rel="schema:hasPart" resource="#acknowledgements" inlist="">
                         <h2 property="schema:name">Acknowledgements</h2>
                         <div about="#acknowledgements" property="schema:description" typeof="deo:Acknowledgements" datatype="rdf:HTML">
-                            <p>Special thanks to our colleagues at <a href="http://mit.edu/">MIT</a>/<a href="https://www.w3.org/">W3C</a>; <a href="https://deiu.me/profile">Andrei Sambra</a>, <a href="https://www.w3.org/People/Sandro/">Sandro Hawke</a>, <a href="http://nicola.io/">Nicola Greco</a>, <a href="http://www.computingjoy.com/">Dmitri Zagidulin</a> and <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a>, as well as <a href="http://bblfish.net/">Henry Story</a> and <a href="http://melvincarvalho.com/#me">Melvin Carvalho</a>. This research was supported in part by <a href="http://qcri.org.qa/">Qatar Computing Research Institute</a>, HBKU through the <a href="http://crosscloud.org/">Crosscloud</a> project. Last but not least, the contributors to the dokieli code, issues, and discussion.</p>
+                            <p>Special thanks to our colleagues at <a href="http://mit.edu/">MIT</a>/<a href="https://www.w3.org/">W3C</a>; <a href="https://deiu.me/profile">Andrei Sambra</a>, <a href="https://www.w3.org/People/Sandro/">Sandro Hawke</a>, <a href="http://nicola.io/">Nicola Greco</a>, <a href="http://www.computingjoy.com/">Dmitri Zagidulin</a> and <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a>, as well as <a href="http://bblfish.net/">Henry Story</a> and <a href="http://melvincarvalho.com/#me">Melvin Carvalho</a>. We are also thankful to collaborate with colleagues at <a href="http://qcri.org.qa/">QCRI</a>. This research was supported in part by <a href="http://qcri.org.qa/">Qatar Computing Research Institute</a>, HBKU through the <a href="http://crosscloud.org/">Crosscloud</a> project. Last but not least, the contributors to the dokieli code, issues, and discussion.</p>
                         </div>
                     </section>
 
