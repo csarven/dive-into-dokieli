@@ -292,36 +292,36 @@
                             <section id="semantics" rel="schema:hasPart" resource="#features" inlist="">
                                 <h3 property="schema:name">Semantics and linking</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; figure # shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object of a statement, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the subject or object.</p>
+                                    <p>The data format of dokieli documents is designed to encourage machine-readable description of ideas and knowledge, which becomes particularly powerful when these individual ideas can be linked to each other with semantically meaningful relationships. A document author can assign a URI to concepts at any level, permitting reference to the document as a whole, a single phrase, or anything in between. Concepts within a single document can be related to each other with the appropriate RDF properties, as well as creating specific relations with external resources. dokieli takes a bottom-up approach to semantic content authoring <mark>[cite]</mark>; <a href="#figure-dokieli-rdfa">figure 9</a> shows our user interface for this, whereby the author selects some text, chooses the subject, predicate and object of a statement, and the application inserts the data as RDFa, and if necessary generates a new URI fragment for the subject or object.</p>
 
-                                    <p>In addition, metadata that does not easily fit into prose (for example, nanopublications [cite]) can be embedded as a single block of Turtle, JSON-LD, or TriG (figure #).</p>
+                                    <p>In addition, metadata that does not easily fit into prose (for example, <a href="http://nanopub.org">nanopublications</a>) can be embedded as a single block of Turtle, JSON-LD, or TriG (<a href="#figure-dokieli-nanopublication">figure 10</a>).</p>
 
-                                    <p>Figure # shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
+                                    <p><a href="#figure-rdfa-visualisation">Figure 11</a> shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
 
-                                    <figure>
+                                    <figure id="figure-dokieli-rdfa" resource="#figure-dokieli-rdfa">
                                         <img src="media/images/dokieli-rdfa.png" width="480" />
-                                        <figcaption>RDFA embedding.</figcaption>
+                                        <figcaption>RDFa embedding.</figcaption>
                                     </figure>
-                                    <figure>
+                                    <figure id="figure-dokieli-nanopublication">
                                         <img src="media/images/dokieli-nanopublication.png" width="480" />
                                         <figcaption>Embedding a nanopublication.</figcaption>
                                     </figure>
-                                    <figure>
+                                    <figure id="figure-rdfa-visualisation">
                                         <figcaption><mark>TODO:</mark> Visualisation of semantic data embedded in this article.</figcaption>
                                     </figure>
 
-                                    <p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>
+                                    <!--<p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>-->
                                 </div>
                             </section>
 
                             <section id="rich-editing" rel="schema:hasPart" resource="#rich-editing" inlist="">
                                 <h3 property="schema:name">Rich editing</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-                                    <p id="editor">The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (figure #). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
+                                    <p id="editor">The current implementation of dokieli makes use of the open source <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for the features one would expect from a WYSIWYG editor (<a href="#figure-edit-menu">figure 12</a>). We have extended this with buttons for RDFAa embedding, annotations and other interactions. The edit menu itself is loosely coupled with the rest of the application logic, so the choice of edit menu can be changed in future if better libraries become available.</p>
 
-                                    <p id="auto-numbering">Tables of contents, tables, and figures are automatically calculated from the document contents and displayed as in figure #. The user can also drag and drop here to conveniently re-order sections of the document. Similarly links within a document are automatically compiled into an academic reference list if required by the author.</p>
+                                    <p id="auto-numbering">Tables of contents, tables, and figures are automatically calculated from the document contents and displayed as in <a href="#figure-toc">figure 13</a>. The user can also drag and drop here to conveniently re-order sections of the document. Similarly links within a document are automatically compiled into an academic reference list if required by the author.</p>
 
-                                    <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one, either through user-agent's built-in feature or through dokieli's menu.</p>
+                                    <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one, either through user-agent's built-in feature or through dokieli's menu (<a href="#figure-views">figure 14</a>).</p>
                                     <script>//<![CDATA[
                                     var actionViews = $('<span id="action-views" class="do">These buttons can also trigger the views in this article: </span>');
                                     var context = $('#stylesheets');
@@ -344,11 +344,20 @@
                                     }
                                     /*]]>*/</style>
 
-                                    <p><mark>Something about embedding runnable code / experiments / stats?</mark></p>
+                                    <!---<p><mark>Something about embedding runnable code / experiments / stats?</mark></p>-->
 
-                                    <figure><figcaption>screenshot of edit menu</figcaption></figure>
-                                    <figure><figcaption>screenshot of toc</figcaption></figure>
-                                    <figure><figcaption>screenshot of views</figcaption></figure>
+                                    <figure id="figure-edit-menu">
+                                        <img src="media/images/dokieli-edit-menu.png"/>
+                                        <figcaption>The edit menu.</figcaption>
+                                    </figure>
+                                    <figure id="figure-toc">
+                                        <img src="media/images/dokieli-toc.png"/>
+                                        <figcaption>Table of contents.</figcaption>
+                                    </figure>
+                                    <figure id="figure-views">
+                                        <img src="media/images/dokieli-views.png"/>
+                                        <figcaption>Options for different views. These buttons activate a stylesheet switcher.</figcaption>
+                                    </figure>
                                 </div>
                             </section>
 
@@ -366,20 +375,33 @@
                                 <div property="schema:description" datatype="rdf:HTML">
                                     <p>Articles may be stored on user's local filesystem or hosted from ordinary Web servers which can serve static HTML files, for example: university user pages, code repositories, personal or company webspace, or any file hosting.</p>
 
-                                    <p>Articles can be edited in a Web browser, and then exported (fig. # %) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user (fig # %).</p>
+                                    <p>Articles can be edited in a Web browser, and then exported (<a href="#figure-do">figure 15</a>) to save changes. dokieli also makes use of <a href="https://www.w3.org/TR/webstorage/">Web Storage</a> in browsers with this capability, which can be enabled or disabled by the user.</p>
 
-                                    <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (fig # % save button). The <em>new</em> (fig # %) and <em>save as</em> (fig # %) buttons prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal dataspace, dokieli presents a dataspace browser, through which the user can click to choose where to save (figure # browser). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses an <code>HTTP POST</code> or <code>PUT</code> to replicate the HTML+RDFa that constitutes an instance, into the chosen dataspace. The user has the option to copy media and scripts to their own space as well, link to them from a <abbr title="Content Delivery Network">CDN</abbr> or link to them from the document they are starting from (figure # browser w labelled baseurl).</p>
+                                    <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (<a href="#figure-do">15</a>). The <em>new</em> and <em>save as</em> buttons (<a href="#figure-do">15</a>) prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal dataspace, dokieli presents a dataspace browser, through which the user can click to choose where to save (<a href="#figure-browser">figure 16</a>). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses an <code>HTTP POST</code> or <code>PUT</code> to replicate the HTML+RDFa that constitutes an instance, into the chosen dataspace. The user has the option to copy media and scripts to their own space as well, link to them from a <abbr title="Content Delivery Network">CDN</abbr> or link to them from the document they are starting from.</p>
 
-                                    <figure><figcaption>file browser woo (with baseurl selection labelled)</figcaption></figure>
+                                    <figure id="figure-do">
+                                        <img src="media/images/dokieli-do.png"/>
+                                        <figcaption>The 'Do' menu, containing Edit, New, Save, Save As, Export and Print.</figcaption>
+                                    </figure>
+ 
+                                    <figure id="figure-browser">
+                                        <img src="media/images/dokieli-browser.png"/>
+                                        <figcaption>The resource browser for Save As, showing the contents of a public space on a Solid server, and various options for saving of embedded resources.</figcaption>
+                                    </figure>
                                 </div>
                             </section>
 
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
                                 <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them. This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). When an annotation is made, dokieli follows the appropriate <code>inbox</code> link and writes a notification there (see Listing 1). When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document <mark>(figure # displaying interactions)</mark>.</p>
+                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them. This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). When an annotation is made, dokieli follows the appropriate <code>inbox</code> link and writes a notification there (see Listing 1). When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document <mark>(<a href="#figure-interactions">figure 17</a>)</mark>.</p>
 
-                                    <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date in which the request was submitted, who submitted, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
+                                    <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, and <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
+
+                                    <figure id="figure-interactions">
+                                        <img src="media/images/dokieli-interactions.png"/>
+                                        <figcaption><mark>TODO</mark> Interactions on a document.</figcaption>
+                                    </figure>
 
                                     <figure id="solid-notification" rel="schema:hasPart" resource="#solid-notification" class="listing">
 <pre about="#solid-notification" typeof="fabio:Script" property="schema:description">
@@ -406,7 +428,6 @@
                                  </div>
                             </section>
 
-                            <figure><figcaption>annotated screenshot of the Do menu</figcaption></figure>
                         </div>
                     </section>
 
