@@ -299,7 +299,7 @@
 
                                     <p><a href="#figure-rdfa-visualisation">Figure 11</a> shows a visualisation of internal and external concepts and relationships from a dokieli document.</p>
 
-                                    <figure id="figure-dokieli-rdfa" resource="#figure-dokieli-rdfa">
+                                    <figure id="figure-dokieli-rdfa">
                                         <img src="media/images/dokieli-rdfa.png" width="480" />
                                         <figcaption>RDFa embedding.</figcaption>
                                     </figure>
@@ -308,7 +308,7 @@
                                         <figcaption>Embedding a nanopublication.</figcaption>
                                     </figure>
                                     <figure id="figure-rdfa-visualisation">
-                                        <figcaption><mark>TODO:</mark> Visualisation of semantic data embedded in this article.</figcaption>
+                                        <figcaption>Visualisation of semantic data embedded in this article.</figcaption>
                                     </figure>
 
                                     <!--<p><mark>Maybe an example of embedding datacube into a table of results would be good here too</mark></p>-->
@@ -384,7 +384,7 @@
                                         <img src="media/images/dokieli-do.png"/>
                                         <figcaption>The 'Do' menu, containing Edit, New, Save, Save As, Export and Print.</figcaption>
                                     </figure>
- 
+
                                     <figure id="figure-browser">
                                         <img src="media/images/dokieli-browser.png"/>
                                         <figcaption>The resource browser for Save As, showing the contents of a public space on a Solid server, and various options for saving of embedded resources.</figcaption>
@@ -395,13 +395,13 @@
                             <section id="interactions" rel="schema:hasPart" resource="#interactions" inlist="">
                                 <h3 property="schema:name">Interactions</h3>
                                 <div property="schema:description" datatype="rdf:HTML">
-                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them. This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). When an annotation is made, dokieli follows the appropriate <code>inbox</code> link and writes a notification there (see Listing 1). When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document <mark>(<a href="#figure-interactions">figure 17</a>)</mark>.</p>
+                                    <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them. This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). When an annotation is made, dokieli follows the appropriate <code>inbox</code> link and writes a notification there (see Listing 1). When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document (<a href="#figure-interactions">figure 17</a>).</p>
 
                                     <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, and <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
 
                                     <figure id="figure-interactions">
                                         <img src="media/images/dokieli-interactions.png"/>
-                                        <figcaption><mark>TODO</mark> Interactions on a document.</figcaption>
+                                        <figcaption>Interactions on a document.</figcaption>
                                     </figure>
 
                                     <figure id="solid-notification" rel="schema:hasPart" resource="#solid-notification" class="listing">
