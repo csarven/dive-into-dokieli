@@ -217,7 +217,7 @@
                                     <p>The core capabilities of dokieli are enabled on a per-document basis, according to the technical resources available for that document. Different combinations of available resources give rise to different <em>modes</em> in which dokieli can operate.</p>
                                     <!---<p>XXX: Create SVGs</p>
                                     <figure id="figure-modes" about="#figure-modes" typeof="doco:FigureBox" rel="schema:hasPart">
-                                        <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268"/>
+                                        <img about="#figure-modes" typeof="doco:Figure" rel="schema:image" src="media/images/dokieli-use-cases.png" width="480" height="268" />
 
                                         <figcaption about="#figure-label-modes" typeof="doco:FigureLabel" property="schema:description">Modes of operation.</figcaption>
                                     </figure>-->
@@ -227,31 +227,31 @@
                                             <p><strong>Read only:</strong> A dokieli instance may be hosted on anything that can serve HTML, including the local filesystem. Content is available without CSS and JavaScript (figure 1). With CSS but without JavaScript, different views are available for consuming media types and devices.</p>
 
                                             <figure>
-                                                <img src="media/images/fig_modes-readonly.svg"/>
+                                                <img src="media/images/mode-read-only.svg" />
                                                 <figcaption>Read only.</figcaption>
                                             </figure>
 
                                             <p><strong>Temporary edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. With JavaScript enabled, content may be edited through a web browser and exported to save changes (figure 2).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-edittemp.svg"/>
+                                                <img src="media/images/modes-edit-temporary.svg" />
                                                 <figcaption>Temporary edit with export to save.</figcaption>
                                             </figure>
 
                                             <p><strong>Local persistent edit:</strong> Hosted on anything that can serve HTML, including the local filesystem. Content may be edited through an in-browser JavaScript editor and in-browser Web Storage enabled to persist changes for a longer period (figure 3).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-editlocal.svg"/>
+                                                <img src="media/images/mode-edit-local.svg" />
                                                 <figcaption>Persistent edit using Web Storage.</figcaption>
                                             </figure>
 
                                             <p><strong>Persistent edit:</strong> Hosted on a Solid server, edited through a web browser, with changes saved directly to the server (figure 4).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-editsolid.svg"/>
+                                                <img src="media/images/mode-edit-solid.svg" />
                                                 <figcaption>Persistent edit on a Solid server, with optional authentication.</figcaption>
                                             </figure>
 
                                             <p><strong>Data only:</strong> Hosted on anything that can serve HTML, content and metadata can be extracted using an RDFa parser and processed, remixed or re-displayed (figure 5).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-dataonly.svg"/>
+                                                <img src="media/images/mode-data-only.svg" />
                                                 <figcaption>Data only</figcaption>
                                             </figure>
 
@@ -262,19 +262,19 @@
                                         <div property="schema:description" datatype="rdf:HTML">
                                             <p><strong>Centralised interactions:</strong> A dokieli instance is hosted on a Solid server, with a pointer to a space to store interactions (such as replies, annotations, likes) made by third-parties through the in-browser JavaScript editor (figure 6).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-interactioncent.svg"/>
+                                                <img src="media/images/mode-interaction-centalised.svg" />
                                                 <figcaption>Centralised interactions</figcaption>
                                             </figure>
 
                                             <p><strong>Decentralised interactions:</strong> Hosted on a Solid server, with an inbox to receive notifications so third-parties can store their interactions in their own dataspace (figure 7).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-interactiondecent.svg"/>
+                                                <img src="media/images/mode-interaction-decentralised.svg" />
                                                 <figcaption>Decentralised interactions</figcaption>
                                             </figure>
 
                                             <p><strong>Decoupled interactions:</strong> Hosted on anything that can serve HTML, with link to a notifications inbox on a Solid server, and third-parties can store their interactions in their own dataspace (figure 8).</p>
                                             <figure>
-                                                <img src="media/images/fig_modes-interactiondecoup.svg"/>
+                                                <img src="media/images/mode-interaction-decoupled.svg" />
                                                 <figcaption>Decoupled interactions</figcaption>
                                             </figure>
                                         </div>
@@ -348,15 +348,15 @@
                                     <!---<p><mark>Something about embedding runnable code / experiments / stats?</mark></p>-->
 
                                     <figure id="figure-edit-menu">
-                                        <img src="media/images/dokieli-edit-menu.png"/>
+                                        <img src="media/images/dokieli-edit-menu.png" />
                                         <figcaption>The edit menu.</figcaption>
                                     </figure>
                                     <figure id="figure-toc">
-                                        <img src="media/images/dokieli-toc.png"/>
+                                        <img src="media/images/dokieli-toc.png" />
                                         <figcaption>Table of contents.</figcaption>
                                     </figure>
                                     <figure id="figure-views">
-                                        <img src="media/images/dokieli-views.png"/>
+                                        <img src="media/images/dokieli-views.png" />
                                         <figcaption>Options for different views. These buttons activate a stylesheet switcher.</figcaption>
                                     </figure>
                                 </div>
@@ -381,12 +381,12 @@
                                     <p>A document stored on a Solid server is readable as a normal HTML page, and additionally editable directly on the server for authorised users (<a href="#figure-do">15</a>). The <em>new</em> and <em>save as</em> buttons (<a href="#figure-do">15</a>) prompt the user to choose a storage location before generating a blank new document or a copy of the current document respectively. If a user is already authenticated and their profile indicates where to find their a personal dataspace, dokieli presents a dataspace browser, through which the user can click to choose where to save (<a href="#figure-browser">figure 16</a>). Non-authenticated users may simply type the URL of a storage location they believe they can access, browse the directories therein, and save if the location is publicly writeable. According to the Solid protocol, dokieli uses an <code>HTTP POST</code> or <code>PUT</code> to replicate the HTML+RDFa that constitutes an instance, into the chosen dataspace. The user has the option to copy media and scripts to their own space as well, link to them from a <abbr title="Content Delivery Network">CDN</abbr> or link to them from the document they are starting from.</p>
 
                                     <figure id="figure-do">
-                                        <img src="media/images/dokieli-do.png"/>
+                                        <img src="media/images/dokieli-do.png" />
                                         <figcaption>The 'Do' menu, containing Edit, New, Save, Save As, Export and Print.</figcaption>
                                     </figure>
 
                                     <figure id="figure-browser">
-                                        <img src="media/images/dokieli-browser.png"/>
+                                        <img src="media/images/dokieli-browser.png" />
                                         <figcaption>The resource browser for Save As, showing the contents of a public space on a Solid server, and various options for saving of embedded resources.</figcaption>
                                     </figure>
                                 </div>
@@ -400,7 +400,7 @@
                                     <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, and <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
 
                                     <figure id="figure-interactions">
-                                        <img src="media/images/dokieli-interactions.png"/>
+                                        <img src="media/images/dokieli-interactions.png" />
                                         <figcaption>Interactions on a document.</figcaption>
                                     </figure>
 
