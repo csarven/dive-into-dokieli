@@ -437,7 +437,7 @@
                                 <div datatype="rdf:HTML" property="schema:description">
                                     <p>We support the rights of authors to own their data, and store and publish it where they feel most comfortable. This includes the social interactions users make around existing publications. Rather than centralising these interactions around the subject document, we took the decision to default to decentralisation of all content by allowing users to authenticate with their personal dataspace, and choose the location for their interactions at the point of making them. This gives rise to the need for a mechanism to notify the original author that their document has received some interaction. We do this by allowing document authors to specify an <em>inbox</em> for either their article as a whole, or any subsection with its own URI using the Solid <code>inbox</code> predicate. Inboxes are containers in a dataspace which may be appended to by anyone, and do not need to be on the same server as the document itself; if one article has multiple inboxes they can be distributed across as many dataspaces as is convenient for the author(s). When an annotation is made, dokieli follows the appropriate <code>inbox</code> link and writes a notification there (see <a href="#figure-interactions-create">figure 17</a> for this process and <a href="#solid-notification">listing 1</a> for notification contents). When the document is loaded, links are followed to all inboxes in order to retrieve interactions there have been notifications about, so that these can be displayed along with the document (<a href="#figure-interactions-display">figure 18</a> and <a href="#figure-dokieli-interactions">figure 19</a>).</p>
 
-                                    <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-source">source</strong> is the URL of an annotation, and <strong class="highlight-property">property</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
+                                    <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-object">object</strong> is the URL of an annotation, and <strong class="highlight-context">context</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
 
                                     <figure id="figure-interactions-create" rel="schema:hasPart" resource="#figure-interactions-create">
                                         <img rel="schema:image" src="media/images/interactions-create.svg" />
@@ -457,17 +457,17 @@
                                     <figure class="listing" id="solid-notification" rel="schema:hasPart" resource="#solid-notification">
 <pre about="#solid-notification" property="schema:description" typeof="fabio:Script">
 <code>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code>
-<code>@prefix solid: &lt;http://www.w3.org/ns/solid/terms#&gt; .</code>
-<code>@prefix pingback: &lt;http://purl.org/net/pingback/&gt; .</code>
 <code>@prefix schema: &lt;https://schema.org/&gt; .</code>
+<code>@prefix solid: &lt;http://www.w3.org/ns/solid/terms#&gt; .</code>
+<code>@prefix as: &lt;http://www.w3.org/ns/activitystreams#&gt; .</code>
 <code>@prefix oa: &lt;http://www.w3.org/ns/oa#&gt; .</code>
 <code>@prefix c: &lt;http://creativecommons.org/licenses/by-sa/4.0/&gt; .</code>
-<code>&lt;&gt; a solid:<strong class="highlight-notification">Notification</strong> ;</code>
-<code>  pingback:<strong class="highlight-source">source</strong> &lt;http://example.net/foo/abc123&gt; ;</code>
-<code>  pingback:<strong class="highlight-property">property</strong> oa:hasTarget ;</code>
-<code>  pingback:<strong class="highlight-target">target</strong> &lt;http://example.org/article#conclusions&gt; ;</code>
-<code>  schema:dateModified "2016-01-24T00:00:00Z"^^xsd:dateTime ;</code>
-<code>  schema:creator &lt;http://csarven.ca/#i&gt; ;</code>
+<code>&lt;&gt; a solid:<strong class="highlight-notification">Notification</strong> , as:Announce ;</code>
+<code>  as:<strong class="highlight-object">object</strong> &lt;http://example.net/foo/abc123&gt; ;</code>
+<code>  as:<strong class="highlight-context">context</strong> oa:hasTarget ;</code>
+<code>  as:<strong class="highlight-target">target</strong> &lt;http://example.org/article#conclusions&gt; ;</code>
+<code>  as:updated "2016-01-24T00:00:00Z"^^xsd:dateTime ;</code>
+<code>  as:actor &lt;http://csarven.ca/#i&gt; ;</code>
 <code>  schema:license c: .</code>
 </pre>
                                         <figcaption property="schema:name">A Solid inbox notification.</figcaption>
