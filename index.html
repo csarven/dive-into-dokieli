@@ -17,7 +17,7 @@
         <script src="https://dokie.li/scripts/do.js"></script>
     </head>
 
-    <body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: https://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# sterms: http://www.w3.org/ns/solid/terms#" typeof="schema:CreativeWork sioc:Post prov:Entity">
+    <body about="" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: http://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# schema: https://schema.org/ rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# solid: http://www.w3.org/ns/solid/terms#" typeof="schema:CreativeWork sioc:Post prov:Entity">
         <main>
             <article about="" typeof="schema:ScholarlyArticle">
                 <h1 property="schema:name">dokieli: decentralised authoring, annotations and social notifications</h1>
@@ -53,7 +53,7 @@
 
                 <dl id="document-inbox">
                     <dt>Notifications Inbox</dt>
-                    <dd><a href="https://dokieli.databox.me/inbox/" rel="sterms:inbox">dokieli/inbox</a></dd>
+                    <dd><a href="https://dokieli.databox.me/inbox/" rel="solid:inbox">dokieli/inbox</a></dd>
                 </dl>
 
                 <dl id="document-in-reply-to">
@@ -359,13 +359,15 @@
 
                                     <p id="stylesheets">dokieli comes with a number of stylesheets built in, and an author with CSS knowledge can create a new one of their own, or reuse existing styles from elsewhere. It is trivial for the user (whether author or reader of a document) to switch between available views to their preferred one, either through user-agent’s built-in feature or through dokieli’s menu (<a href="#figure-dokieli-views">figure 14</a>).</p>
                                     <script>//<![CDATA[
-                                    var actionViews = $('<span id="action-views" class="do">These buttons can also trigger the views in this article: </span>');
-                                    var context = $('#stylesheets');
-                                    context.after(actionViews);
-                                    DO.U.showViews(actionViews);
-                                    actionViews.find('h2').remove();
-                                    var nodeDetached = actionViews.detach();
-                                    context.append(nodeDetached);
+                                    var actionViews = '<span id="action-views" class="do">These buttons can also trigger the views in this article: </span>';
+                                    var context = document.getElementById('stylesheets');
+                                    context.insertAdjacentHTML('afterend', actionViews);
+                                    var aV = document.getElementById('action-views');
+                                    DO.U.showViews(aV);
+                                    var h2 = aV.querySelector('h2');
+                                    h2.parentNode.removeChild(h2);
+                                    var nodeDetached = aV.parentNode.removeChild(aV);
+                                    context.insertAdjacentHTML('beforeend', nodeDetached);
                                     //]]></script>
                                     <style>/*<![CDATA[*/
                                     @media screen {
@@ -437,12 +439,12 @@
                                     <p id="dokieli-notifications">Although providing enriched (meta)data is voluntary, provenance level data like the date on which the request was submitted, who by, and its license, can be purposed towards the verification process as well as for displaying. An example Solid inbox <strong class="highlight-notification">Notification</strong> is shown in Listing [<a href="#solid-notification">1</a>], in which <strong class="highlight-object">object</strong> is the URL of an annotation, and <strong class="highlight-context">context</strong> is the type of relation to the <strong class="highlight-target">target</strong> (the conclusions section of an article).</p>
 
                                     <figure id="figure-interactions-create" rel="schema:hasPart" resource="#figure-interactions-create">
-                                        <img rel="schema:image" src="media/images/interactions-create.svg" />
+                                        <object data="media/images/interactions-create.svg" height="504" rel="schema:image" width="480"></object>
                                         <figcaption property="schema:name">What happens when a user creates an interaction on an article.</figcaption>
                                     </figure>
 
                                     <figure id="figure-interactions-display" rel="schema:hasPart" resource="#figure-interactions-display">
-                                        <img rel="schema:image" src="media/images/interactions-display.svg" />
+                                        <object data="media/images/interactions-display.svg" height="393" rel="schema:image" type="image/svg+xml" width="480"></object>
                                         <figcaption property="schema:name">How interactions are displayed on an article.</figcaption>
                                     </figure>
 
